@@ -14,6 +14,7 @@
 		B537CB7F29EF32D4008E70CC /* TradeMETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB7E29EF32D4008E70CC /* TradeMETests.swift */; };
 		B537CB8929EF32D4008E70CC /* TradeMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */; };
 		B537CB8B29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */; };
+		B537CB9929EF55E2008E70CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9829EF55E2008E70CC /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B537CB8429EF32D4008E70CC /* TradeMEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeMEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITests.swift; sourceTree = "<group>"; };
 		B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B537CB9829EF55E2008E70CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B537CB9729EF55CD008E70CC /* Service */,
 				B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */,
 				B537CB6F29EF32D3008E70CC /* ContentView.swift */,
 				B537CB7129EF32D4008E70CC /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */,
 			);
 			path = TradeMEUITests;
+			sourceTree = "<group>";
+		};
+		B537CB9729EF55CD008E70CC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B537CB9829EF55E2008E70CC /* API.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
+				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
