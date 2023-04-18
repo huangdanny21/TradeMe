@@ -12,29 +12,29 @@ protocol API {
 }
 
 enum APIS {
-    enum CardPrice: API {
-        static let baseUrl = URL(string: "https://api.yelp.comv3")!
-        case cardName
-        case printTag
-        case rarity
-        case set
+    enum CardPrice: String, API {
+        static let baseUrl = URL(string: "http://yugiohprices.com/api/")!
+        case cardName = "get_card_prices/%@"
+        case printTag = "price_for_print_tag/%@"
+        case rarity = "price_history/%@?rarity=%@"
+        case set = "set_data/%@"
     }
     
-    enum CardSet: API {
-        static let baseUrl = URL(string: "https://api.yelp.comv3")!
-        case setName
+    enum CardSet: String, API {
+        static let baseUrl = URL(string: "http://yugiohprices.com/api/")!
+        case setName = "set_data/%@"
     }
     
-    enum CardData: API {
-        static let baseUrl = URL(string: "https://api.yelp.comv3")!
-        case name
-        case allKnownV
-        case supportCardsByName
+    enum CardData: String, API {
+        static let baseUrl = URL(string: "http://yugiohprices.com/api/")!
+        case name = "card_data/%@"
+        case allKnownV = "card_versions/%@"
+        case supportCardsByName = "card_support/%@"
     }
     
-    enum CardImage: API {
-        static let baseUrl = URL(string: "https://api.yelp.comv3")!
-        case name
-        case cardSet
+    enum CardImage: String, API {
+        static let baseUrl = URL(string: "http://yugiohprices.com/api/")!
+        case name = "card_image/%@"
+        case cardSet = "set_image/%@"
     }
 }

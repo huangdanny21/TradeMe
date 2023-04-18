@@ -15,6 +15,7 @@
 		B537CB8929EF32D4008E70CC /* TradeMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */; };
 		B537CB8B29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */; };
 		B537CB9929EF55E2008E70CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9829EF55E2008E70CC /* API.swift */; };
+		B537CB9C29EF598B008E70CC /* CardResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITests.swift; sourceTree = "<group>"; };
 		B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B537CB9829EF55E2008E70CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResponseContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B537CB9A29EF595E008E70CC /* Models */,
 				B537CB9729EF55CD008E70CC /* Service */,
 				B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */,
 				B537CB6F29EF32D3008E70CC /* ContentView.swift */,
@@ -136,6 +139,14 @@
 				B537CB9829EF55E2008E70CC /* API.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B537CB9A29EF595E008E70CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +281,7 @@
 			files = (
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
+				B537CB9C29EF598B008E70CC /* CardResponseContainer.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
