@@ -16,26 +16,12 @@ struct ContentView: View {
             VStack {
                 NavigationLink(destination: CardSearchView()) {
                      Text("Send Me").padding().background(Color.green)
-                     
-
                  }
             }
             .padding()
         }
         .onAppear {
             
-        }
-    }
-    
-    
-    func fetch() {
-        // Start an async task
-        Task {
-            do {
-                let card = try await CardFetchViewModel.cardPrice(for: "Kuriboh")
-            } catch {
-                print("Request failed with error: \(error.localizedDescription)")
-            }
         }
     }
 }

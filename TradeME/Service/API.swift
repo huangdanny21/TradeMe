@@ -36,7 +36,6 @@ enum APIS {
     }
     
     enum CardSet: RawRepresentable, API {
-        
         static let baseUrl = URL(string: "http://yugiohprices.com/api/")!
         case setName(data: String)
         
@@ -58,10 +57,8 @@ enum APIS {
             case .name(let name): return "card_data/\(name)"
             case .allKnownV(let tag): return "card_versions/\(tag)"
             case .supportCardsByName(let name): return "card_support/\(name)"
-                
             }
         }
-        
     }
     
     enum CardImage: RawRepresentable, API {
