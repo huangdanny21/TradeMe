@@ -15,7 +15,8 @@
 		B537CB8929EF32D4008E70CC /* TradeMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */; };
 		B537CB8B29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */; };
 		B537CB9929EF55E2008E70CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9829EF55E2008E70CC /* API.swift */; };
-		B537CB9C29EF598B008E70CC /* CardResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */; };
+		B537CB9C29EF598B008E70CC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* Card.swift */; };
+		B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,9 @@
 		B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITests.swift; sourceTree = "<group>"; };
 		B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B537CB9829EF55E2008E70CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResponseContainer.swift; sourceTree = "<group>"; };
+		B537CB9B29EF598B008E70CC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFetchViewModel.swift; sourceTree = "<group>"; };
+		B537CBA129EF6F70008E70CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,9 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B537CBA129EF6F70008E70CC /* Info.plist */,
+				B537CBA029EF6929008E70CC /* ViewModels */,
+				B537CB9D29EF5FB0008E70CC /* Extensions */,
 				B537CB9A29EF595E008E70CC /* Models */,
 				B537CB9729EF55CD008E70CC /* Service */,
 				B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */,
@@ -144,9 +150,24 @@
 		B537CB9A29EF595E008E70CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B537CB9B29EF598B008E70CC /* CardResponseContainer.swift */,
+				B537CB9B29EF598B008E70CC /* Card.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B537CB9D29EF5FB0008E70CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B537CBA029EF6929008E70CC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,9 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
-				B537CB9C29EF598B008E70CC /* CardResponseContainer.swift in Sources */,
+				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +465,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TradeME/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradeME/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -471,6 +495,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TradeME/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TradeME/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

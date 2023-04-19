@@ -10,12 +10,27 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button("Card Price") {
+                fetch()
+            }
         }
         .padding()
+        .onAppear {
+            
+        }
+    }
+    
+    
+    func fetch() {
+        // Start an async task
+        Task {
+            do {
+                let card = try await CardFetchViewModel.cardPrice(for: "Kuriboh")
+                print(card)
+            } catch {
+                print("Request failed with error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
