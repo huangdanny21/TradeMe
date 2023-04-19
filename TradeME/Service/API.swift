@@ -13,10 +13,6 @@ public protocol RawRepresentable {
     var rawValue: Self.RawValue { get }
 }
 
-enum CardDataFetchError: Error {
-    case invalidURL
-}
-
 protocol API {
     static var baseUrl: URL { get }
 }
@@ -80,6 +76,10 @@ enum APIS {
             }
         }
     }
+}
+
+enum CardDataFetchError: Error {
+    case invalidURL
 }
 
 extension RawRepresentable where RawValue == String, Self : API {

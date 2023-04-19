@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var currentText = ""
+    
     var body: some View {
-        VStack {
-            Button("Card Price") {
-                fetch()
+        NavigationView {
+            VStack {
+                NavigationLink(destination: CardSearchView()) {
+                     Text("Send Me").padding().background(Color.green)
+                     
+
+                 }
             }
+            .padding()
         }
-        .padding()
         .onAppear {
             
         }
@@ -26,7 +33,6 @@ struct ContentView: View {
         Task {
             do {
                 let card = try await CardFetchViewModel.cardPrice(for: "Kuriboh")
-                print(card)
             } catch {
                 print("Request failed with error: \(error.localizedDescription)")
             }

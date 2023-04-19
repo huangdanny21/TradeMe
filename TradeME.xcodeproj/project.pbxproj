@@ -17,6 +17,7 @@
 		B537CB9929EF55E2008E70CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9829EF55E2008E70CC /* API.swift */; };
 		B537CB9C29EF598B008E70CC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* Card.swift */; };
 		B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */; };
+		B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA329EF88AA008E70CC /* CardSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B537CB9B29EF598B008E70CC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFetchViewModel.swift; sourceTree = "<group>"; };
 		B537CBA129EF6F70008E70CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B537CBA329EF88AA008E70CC /* CardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B537CBA229EF888D008E70CC /* Modules */,
 				B537CBA129EF6F70008E70CC /* Info.plist */,
 				B537CBA029EF6929008E70CC /* ViewModels */,
 				B537CB9D29EF5FB0008E70CC /* Extensions */,
@@ -168,6 +171,14 @@
 				B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B537CBA229EF888D008E70CC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBA329EF88AA008E70CC /* CardSearchView.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
+				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
