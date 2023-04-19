@@ -20,13 +20,11 @@
 		B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA329EF88AA008E70CC /* CardSearchView.swift */; };
 		B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */; };
 		B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBAA29EF9C48008E70CC /* YGOCard.swift */; };
-		B537CBAE29EFA1E8008E70CC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */; };
 		B537CBB229EFA23D008E70CC /* SearchResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB129EFA23D008E70CC /* SearchResultRow.swift */; };
 		B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB429EFA80D008E70CC /* URLMaker.swift */; };
 		B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB729EFBA00008E70CC /* CollectionListView.swift */; };
 		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
-		B58691CC29F0963500643258 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = B58691CB29F0963500643258 /* PopupView */; };
 		B58691CF29F0995F00643258 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691CE29F0995F00643258 /* ObjectSavable.swift */; };
 		B58691D129F099AE00643258 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691D029F099AE00643258 /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +60,6 @@
 		B537CB9829EF55E2008E70CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B537CB9B29EF598B008E70CC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B537CB9E29EF6924008E70CC /* CardFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFetchService.swift; sourceTree = "<group>"; };
-		B537CBA129EF6F70008E70CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B537CBA329EF88AA008E70CC /* CardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchView.swift; sourceTree = "<group>"; };
 		B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
 		B537CBAA29EF9C48008E70CC /* YGOCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGOCard.swift; sourceTree = "<group>"; };
@@ -80,8 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58691CC29F0963500643258 /* PopupView in Frameworks */,
-				B537CBAE29EFA1E8008E70CC /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +104,7 @@
 				B537CB7D29EF32D4008E70CC /* TradeMETests */,
 				B537CB8729EF32D4008E70CC /* TradeMEUITests */,
 				B537CB6B29EF32D3008E70CC /* Products */,
+				B5B71C6429F0B1AE00D6BFB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,7 +125,6 @@
 				B537CBAF29EFA224008E70CC /* Reusable */,
 				B537CBA729EF8FF8008E70CC /* View Modifiers */,
 				B537CBA229EF888D008E70CC /* Modules */,
-				B537CBA129EF6F70008E70CC /* Info.plist */,
 				B537CBA029EF6929008E70CC /* Services */,
 				B537CB9A29EF595E008E70CC /* Models */,
 				B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */,
@@ -260,6 +255,13 @@
 			path = ObjectSavable;
 			sourceTree = "<group>";
 		};
+		B5B71C6429F0B1AE00D6BFB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,8 +279,6 @@
 			);
 			name = TradeME;
 			packageProductDependencies = (
-				B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */,
-				B58691CB29F0963500643258 /* PopupView */,
 			);
 			productName = TradeME;
 			productReference = B537CB6A29EF32D3008E70CC /* TradeME.app */;
@@ -353,8 +353,6 @@
 			);
 			mainGroup = B537CB6129EF32D3008E70CC;
 			packageReferences = (
-				B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				B58691CA29F0963500643258 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = B537CB6B29EF32D3008E70CC /* Products */;
 			projectDirPath = "";
@@ -735,38 +733,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		B58691CA29F0963500643258 /* XCRemoteSwiftPackageReference "PopupView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-		B58691CB29F0963500643258 /* PopupView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B58691CA29F0963500643258 /* XCRemoteSwiftPackageReference "PopupView" */;
-			productName = PopupView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B537CB6229EF32D3008E70CC /* Project object */;
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+//import SDWebImageSwiftUI
 
 struct SearchResultRowViewModel: Identifiable  {
     let result: BasicCard
@@ -19,10 +19,10 @@ struct SearchResultRow: View {
     
     var body: some View {
         HStack {
-            WebImage(url: URLMaker.urlForCardName(name: result.searchText))
-                .resizable()
-                            .frame(width: 60, height: 75)
-                            .aspectRatio(contentMode: .fit)
+//            WebImage(url: URLMaker.urlForCardName(name: result.searchText))
+//                .resizable()
+//                            .frame(width: 60, height: 75)
+//                            .aspectRatio(contentMode: .fit)
             
             VStack {
                 HStack {
