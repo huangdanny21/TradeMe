@@ -1,5 +1,5 @@
 //
-//  CardFetchViewModel.swift
+//  CardFetchService.swift
 //  TradeME
 //
 //  Created by Zhi Yong Huang on 4/18/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardFetchViewModel {
+struct CardFetchService {
     static func cardPrice(for name: String) async throws -> CardResponseContainer {
         let url = APIS.CardPrice.cardName(name: name).url
         // Use the async variant of URLSession to fetch data

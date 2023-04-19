@@ -1,5 +1,5 @@
 //
-//  SearchResultRowView.swift
+//  SearchResultRow.swift
 //  TradeME
 //
 //  Created by Zhi Yong Huang on 4/18/23.
@@ -14,7 +14,7 @@ struct SearchResultRowViewModel: Identifiable  {
     let id = UUID()
 }
 
-struct SearchResultRowView: View {
+struct SearchResultRow: View {
     let result: SearchResultRowViewModel
     
     var body: some View {

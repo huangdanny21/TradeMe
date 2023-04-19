@@ -21,11 +21,10 @@ struct CardSearchView: View {
         NavigationStack {
             List {
                 ForEach(searchResults) { result in
-                    SearchResultRowView(result: result)
+                    SearchResultRow(result: result)
                 }
             }
         }
-        .hiddenNavigationBarStyle()
         .searchable(text: $searchText)
         .onSubmit(of: .search, fetch)
     }
@@ -35,7 +34,7 @@ struct CardSearchView: View {
     func fetch() {
         Task {
             do {
-                let card = try await CardFetchViewModel.cardPrice(for: searchText).data
+                let card = try await CardFetchService.cardPrice(for: searchText).data
                 card.forEach { card in
                     self.cards.append(SearchResultRowViewModel(result: card, searchText: searchText))
                 }
