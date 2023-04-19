@@ -7,14 +7,12 @@
 
 import Foundation
 
-// MARK: - Welcome
 struct CardResponseContainer: Codable {
     let status: Status
     let data: [BasicCard]
 }
 
-// MARK: - Datum
-struct BasicCard: Codable {
+struct BasicCard: Card, Codable {
     let name, printTag, rarity: String
     let priceData: PriceData
 
@@ -26,20 +24,17 @@ struct BasicCard: Codable {
     }
 }
 
-// MARK: - PriceData
 struct PriceData: Codable {
     let status: Status
     let data: DataClass?
     let message: String?
 }
 
-// MARK: - DataClass
 struct DataClass: Codable {
     let listings: [String]
     let prices: Prices
 }
 
-// MARK: - Prices
 struct Prices: Codable {
     let high, low, average, shift: Double
     let shift3, shift7, shift21, shift30: Double

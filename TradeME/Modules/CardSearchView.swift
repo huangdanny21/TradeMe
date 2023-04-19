@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-enum SearchScope: String, CaseIterable {
-    case inbox, favorites
-}
-
 struct CardSearchView: View {
     
     @State var cards = [BasicCard]()
+    @State var ygoCards = [YGOCard]()
     @State var cardNames = [String]()
 
     @State var searchText = ""
@@ -45,9 +42,10 @@ struct CardSearchView: View {
     func fetch() {
         Task {
             do {
-                let card = try await CardFetchViewModel.cardPrice(for: searchText).data
-                self.cards = card
-                self.cardNames = card.map{$0.name}
+                let card = try await CardFetchViewModel.cardData(for: searchText).data
+//                let card = try await CardFetchViewModel.cardPrice(for: searchText).data
+//                self.cards = card
+                self.ygoCards.append(card)
             } catch {
                 print("Request failed with error: \(error.localizedDescription)")
             }

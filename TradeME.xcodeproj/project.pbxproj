@@ -19,6 +19,7 @@
 		B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */; };
 		B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA329EF88AA008E70CC /* CardSearchView.swift */; };
 		B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */; };
+		B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBAA29EF9C48008E70CC /* YGOCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B537CBA129EF6F70008E70CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B537CBA329EF88AA008E70CC /* CardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchView.swift; sourceTree = "<group>"; };
 		B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
+		B537CBAA29EF9C48008E70CC /* YGOCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGOCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B537CB9B29EF598B008E70CC /* Card.swift */,
+				B537CBAA29EF9C48008E70CC /* YGOCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */,
+				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
