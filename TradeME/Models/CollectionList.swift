@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct CollectionList {
+struct CollectionList: Identifiable {
     let title: String
-    let descrption: String
+    let descrption: String?
     let cards: [YGOCard]
+    let id = UUID()
 }

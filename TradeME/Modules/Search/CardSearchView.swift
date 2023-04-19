@@ -18,7 +18,7 @@ struct CardSearchView: View {
      }
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 ForEach(searchResults) { result in
                     SearchResultRow(result: result)

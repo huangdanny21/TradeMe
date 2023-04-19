@@ -21,6 +21,7 @@ struct YGOCard: Card, Codable {
     let family: String
     let atk, def, level: Int
     let property: String?
+    var count: Int?
 
     enum CodingKeys: String, CodingKey {
         case name, text

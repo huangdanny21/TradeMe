@@ -11,15 +11,16 @@ struct CollectionListView: View {
     
     @State var collections: [CollectionList]
     @State private var presentAlert = false
-    @State private var username: String = ""
-    @State private var password: String = ""
-    
+    @State private var title: String = ""
+    @State private var descrption: String = ""
+    @State private var didCreateNewList = false
     
     var body: some View {
-        NavigationStack {
-            
-            List {
-                
+        List {
+            ForEach(collections) { collection in
+                NavigationLink(destination: CardListModificationView(list: [])) {
+                    Text(collection.title)
+                }
             }
         }
         .toolbar {
@@ -28,11 +29,11 @@ struct CollectionListView: View {
                     addNewCollection()
                 }
                 .alert("New List", isPresented: $presentAlert, actions: {
-                    TextField("Title", text: $username)
-                    TextField("descrption", text: $username)
-                    
-                    Button("Create", action: { didCreateNewList()})
-                    Button("Cancel", role: .cancel, action: { didNotcreateNewList()})
+                    TextField("Title", text: $title)
+                    TextField("descrption", text: $descrption)
+
+                    Button("Create", role: .destructive, action: { createdNewList()})
+                    Button("Cancel", role: .cancel, action: {})
                 }, message: {
                     Text("Enter title and description if needed")
                 })
@@ -46,12 +47,11 @@ struct CollectionListView: View {
         presentAlert = true
     }
     
-    private func didNotcreateNewList() {
+    private func createdNewList() {
         print("Did not create list")
-    }
-    
-    private func didCreateNewList() {
-        print("Did  create list")
+        let newList = CollectionList(title: title, descrption: descrption, cards: [])
+        collections.append(newList)
+        didCreateNewList = true
     }
 }
 
