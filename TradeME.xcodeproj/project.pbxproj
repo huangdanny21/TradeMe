@@ -23,6 +23,8 @@
 		B537CBAE29EFA1E8008E70CC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */; };
 		B537CBB229EFA23D008E70CC /* SearchResultRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB129EFA23D008E70CC /* SearchResultRowView.swift */; };
 		B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB429EFA80D008E70CC /* URLMaker.swift */; };
+		B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB729EFBA00008E70CC /* CollectionListView.swift */; };
+		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		B537CBAA29EF9C48008E70CC /* YGOCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGOCard.swift; sourceTree = "<group>"; };
 		B537CBB129EFA23D008E70CC /* SearchResultRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRowView.swift; sourceTree = "<group>"; };
 		B537CBB429EFA80D008E70CC /* URLMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMaker.swift; sourceTree = "<group>"; };
+		B537CBB729EFBA00008E70CC /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
+		B537CBB929EFBC44008E70CC /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,7 @@
 				B537CBA729EF8FF8008E70CC /* View Modifiers */,
 				B537CBA229EF888D008E70CC /* Modules */,
 				B537CBA129EF6F70008E70CC /* Info.plist */,
-				B537CBA029EF6929008E70CC /* ViewModels */,
+				B537CBA029EF6929008E70CC /* Services */,
 				B537CB9A29EF595E008E70CC /* Models */,
 				B537CB9729EF55CD008E70CC /* Service */,
 				B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */,
@@ -167,22 +171,24 @@
 			children = (
 				B537CB9B29EF598B008E70CC /* Card.swift */,
 				B537CBAA29EF9C48008E70CC /* YGOCard.swift */,
+				B537CBB929EFBC44008E70CC /* CollectionList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B537CBA029EF6929008E70CC /* ViewModels */ = {
+		B537CBA029EF6929008E70CC /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B537CB9E29EF6924008E70CC /* CardFetchViewModel.swift */,
 			);
-			path = ViewModels;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B537CBA329EF88AA008E70CC /* CardSearchView.swift */,
+				B537CBBB29EFBDAA008E70CC /* Search */,
+				B537CBB629EFB919008E70CC /* CardCollectionView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -217,6 +223,22 @@
 				B537CBB429EFA80D008E70CC /* URLMaker.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B537CBB629EFB919008E70CC /* CardCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBB729EFBA00008E70CC /* CollectionListView.swift */,
+			);
+			path = CardCollectionView;
+			sourceTree = "<group>";
+		};
+		B537CBBB29EFBDAA008E70CC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBA329EF88AA008E70CC /* CardSearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +385,10 @@
 				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
 				B537CBB229EFA23D008E70CC /* SearchResultRowView.swift in Sources */,
 				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,
+				B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */,
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
+				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

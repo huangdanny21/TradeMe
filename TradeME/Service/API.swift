@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 public protocol RawRepresentable {
     associatedtype RawValue
     init?(rawValue: Self.RawValue)
@@ -77,11 +75,11 @@ enum APIS {
     }
 }
 
-enum CardDataFetchError: Error {
+enum ServiceError: Error {
     case invalidURL
 }
 
 extension RawRepresentable where RawValue == String, Self : API {
     init?(rawValue: String) { nil }
-    var url: URL {Self.baseUrl.appendingPathComponent(rawValue)}
+    var url: URL { Self.baseUrl.appendingPathComponent(rawValue) }
 }
