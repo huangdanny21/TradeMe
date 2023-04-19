@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 public protocol RawRepresentable {
     associatedtype RawValue
     init?(rawValue: Self.RawValue)

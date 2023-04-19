@@ -20,6 +20,9 @@
 		B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA329EF88AA008E70CC /* CardSearchView.swift */; };
 		B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */; };
 		B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBAA29EF9C48008E70CC /* YGOCard.swift */; };
+		B537CBAE29EFA1E8008E70CC /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */; };
+		B537CBB229EFA23D008E70CC /* SearchResultRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB129EFA23D008E70CC /* SearchResultRowView.swift */; };
+		B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB429EFA80D008E70CC /* URLMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,8 @@
 		B537CBA329EF88AA008E70CC /* CardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchView.swift; sourceTree = "<group>"; };
 		B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
 		B537CBAA29EF9C48008E70CC /* YGOCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGOCard.swift; sourceTree = "<group>"; };
+		B537CBB129EFA23D008E70CC /* SearchResultRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRowView.swift; sourceTree = "<group>"; };
+		B537CBB429EFA80D008E70CC /* URLMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B537CBAE29EFA1E8008E70CC /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,8 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B537CBB329EFA802008E70CC /* Helper */,
+				B537CBAF29EFA224008E70CC /* Reusable */,
 				B537CBA729EF8FF8008E70CC /* View Modifiers */,
 				B537CBA229EF888D008E70CC /* Modules */,
 				B537CBA129EF6F70008E70CC /* Info.plist */,
@@ -187,6 +195,30 @@
 			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
+		B537CBAF29EFA224008E70CC /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBB029EFA230008E70CC /* Views */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		B537CBB029EFA230008E70CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBB129EFA23D008E70CC /* SearchResultRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B537CBB329EFA802008E70CC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B537CBB429EFA80D008E70CC /* URLMaker.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +235,9 @@
 			dependencies = (
 			);
 			name = TradeME;
+			packageProductDependencies = (
+				B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */,
+			);
 			productName = TradeME;
 			productReference = B537CB6A29EF32D3008E70CC /* TradeME.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +310,9 @@
 				Base,
 			);
 			mainGroup = B537CB6129EF32D3008E70CC;
+			packageReferences = (
+				B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = B537CB6B29EF32D3008E70CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,11 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchViewModel.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
+				B537CBB229EFA23D008E70CC /* SearchResultRowView.swift in Sources */,
 				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
@@ -647,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B537CBAD29EFA1E8008E70CC /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B537CBAC29EFA1E8008E70CC /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B537CB6229EF32D3008E70CC /* Project object */;
 }

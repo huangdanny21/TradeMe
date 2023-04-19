@@ -15,7 +15,7 @@ struct CardResponseContainer: Codable {
 struct BasicCard: Card, Codable {
     let name, printTag, rarity: String
     let priceData: PriceData
-
+    
     enum CodingKeys: String, CodingKey {
         case name
         case printTag = "print_tag"
