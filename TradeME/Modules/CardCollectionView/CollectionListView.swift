@@ -18,7 +18,7 @@ struct CollectionListView: View {
     var body: some View {
         List {
             ForEach(collections) { collection in
-                NavigationLink(destination: CardListModificationView(list: [])) {
+                NavigationLink(destination: CardListModificationView(list: collection, cardList: [])) {
                     Text(collection.title)
                 }
             }
@@ -48,7 +48,6 @@ struct CollectionListView: View {
     }
     
     private func createdNewList() {
-        print("Did not create list")
         let newList = CollectionList(title: title, descrption: descrption, cards: [])
         collections.append(newList)
         didCreateNewList = true

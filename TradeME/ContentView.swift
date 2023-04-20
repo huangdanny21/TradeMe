@@ -14,9 +14,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: CardSearchView()) {
-                    Text("To Search").padding().background(.black)
-                 }
                 NavigationLink(destination: CollectionListView(collections: [])) {
                      Text("My Collections").padding().background(Color.red)
                  }

@@ -27,4 +27,14 @@ struct CardFetchService {
         let card = try JSONDecoder().decode(YGOCardWrapper.self, from: data)
         return card
     }
+    
+    static func cardImage(for set: String) async throws -> YGOCardWrapper {
+        let url = APIS.CardImage.cardSet(set: set).url
+        // Use the async variant of URLSession to fetch data
+        // Code might suspend here
+        let (data, _) = try await URLSession.shared.data(from: url)
+        // Parse the JSON data
+        let card = try JSONDecoder().decode(YGOCardWrapper.self, from: data)
+        return card
+    }
 }

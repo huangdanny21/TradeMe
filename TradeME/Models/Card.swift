@@ -12,9 +12,10 @@ struct CardResponseContainer: Codable {
     let data: [BasicCard]
 }
 
-struct BasicCard: Card, Codable {
+struct BasicCard: Identifiable, Card, Codable {
     let name, printTag, rarity: String
     let priceData: PriceData
+    let id = 0
     
     enum CodingKeys: String, CodingKey {
         case name

@@ -12,7 +12,8 @@ struct CardSearchView: View {
     @State var cards = [SearchResultRowViewModel]()
     @State var ygoCards = [YGOCard]()
     @State var searchText = ""
-    
+    var addCard : (SearchResultRowViewModel) -> ()
+
     var searchResults: [SearchResultRowViewModel] {
         searchText.isEmpty ? [] : cards
      }
@@ -21,7 +22,7 @@ struct CardSearchView: View {
         NavigationView {
             List {
                 ForEach(searchResults) { result in
-                    SearchResultRow(result: result)
+                    SearchResultRow(result: result, addCard: addCard)
                 }
             }
         }

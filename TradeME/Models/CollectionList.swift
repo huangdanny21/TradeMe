@@ -10,6 +10,7 @@ import Foundation
 struct CollectionList: Identifiable {
     let title: String
     let descrption: String?
-    let cards: [YGOCard]
+    var cards: [BasicCard]
     let id = UUID()
+    var count = 0
 }

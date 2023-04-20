@@ -27,6 +27,8 @@
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
 		B58691CF29F0995F00643258 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691CE29F0995F00643258 /* ObjectSavable.swift */; };
 		B58691D129F099AE00643258 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691D029F099AE00643258 /* UserDefaultsHelper.swift */; };
+		B5B71C6D29F0B50600D6BFB8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */; };
+		B5B71C7029F0B53800D6BFB8 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6F29F0B53800D6BFB8 /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B71C7029F0B53800D6BFB8 /* PopupView in Frameworks */,
+				B5B71C6D29F0B50600D6BFB8 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +283,8 @@
 			);
 			name = TradeME;
 			packageProductDependencies = (
+				B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */,
+				B5B71C6F29F0B53800D6BFB8 /* PopupView */,
 			);
 			productName = TradeME;
 			productReference = B537CB6A29EF32D3008E70CC /* TradeME.app */;
@@ -353,6 +359,8 @@
 			);
 			mainGroup = B537CB6129EF32D3008E70CC;
 			packageReferences = (
+				B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				B5B71C6E29F0B53800D6BFB8 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = B537CB6B29EF32D3008E70CC /* Products */;
 			projectDirPath = "";
@@ -572,6 +580,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TradeME/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -602,6 +611,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TradeME/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -733,6 +743,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		B5B71C6E29F0B53800D6BFB8 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		B5B71C6F29F0B53800D6BFB8 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5B71C6E29F0B53800D6BFB8 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B537CB6229EF32D3008E70CC /* Project object */;
 }
