@@ -7,21 +7,40 @@
 
 import Foundation
 
-struct UserDefaultsHelper {
-    static func saveObject<T: Codable>(object: T, forKey key: String) {
+protocol ObjectSavable {
+    func setObject<Object>(_ object: Object, forKey: String) throws where Object: Encodable
+    func getObject<Object>(forKey: String, castTo type: Object.Type) throws -> Object where Object: Decodable
+}
+
+enum ObjectSavableError: String, LocalizedError {
+    case unableToEncode = "Unable to encode object into data"
+    case noValue = "No data object found for the given key"
+    case unableToDecode = "Unable to decode object into given type"
+    
+    var errorDescription: String? {
+        rawValue
+    }
+}
+
+extension UserDefaults: ObjectSavable {
+    func setObject<Object>(_ object: Object, forKey: String) throws where Object: Encodable {
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(object) {
-            UserDefaults.standard.set(encoded, forKey: key)
+        do {
+            let data = try encoder.encode(object)
+            set(data, forKey: forKey)
+        } catch {
+            throw ObjectSavableError.unableToEncode
         }
     }
     
-    func getObject<T: Codable>(forKey key: String) -> T? {
-        if let data = UserDefaults.standard.object(forKey: key) as? Data {
-            let decoder = JSONDecoder()
-            if let object = try? decoder.decode(T.self, from: data) {
-                return object
-            }
+    func getObject<Object>(forKey: String, castTo type: Object.Type) throws -> Object where Object: Decodable {
+        guard let data = data(forKey: forKey) else { throw ObjectSavableError.noValue }
+        let decoder = JSONDecoder()
+        do {
+            let object = try decoder.decode(type, from: data)
+            return object
+        } catch {
+            throw ObjectSavableError.unableToDecode
         }
-        return nil
     }
 }

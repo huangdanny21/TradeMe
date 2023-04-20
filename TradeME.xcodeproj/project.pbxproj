@@ -25,10 +25,11 @@
 		B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB729EFBA00008E70CC /* CollectionListView.swift */; };
 		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
-		B58691CF29F0995F00643258 /* ObjectSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691CE29F0995F00643258 /* ObjectSavable.swift */; };
-		B58691D129F099AE00643258 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58691D029F099AE00643258 /* UserDefaultsHelper.swift */; };
 		B5B71C6D29F0B50600D6BFB8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */; };
 		B5B71C7029F0B53800D6BFB8 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6F29F0B53800D6BFB8 /* PopupView */; };
+		B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */; };
+		B5B71C7829F0EC5000D6BFB8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B71C7729F0EC5000D6BFB8 /* Constants.swift */; };
+		B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +71,9 @@
 		B537CBB729EFBA00008E70CC /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		B537CBB929EFBC44008E70CC /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		B537CBBD29EFC856008E70CC /* CardListModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModificationView.swift; sourceTree = "<group>"; };
-		B58691CE29F0995F00643258 /* ObjectSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectSavable.swift; sourceTree = "<group>"; };
-		B58691D029F099AE00643258 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListSavable.swift; sourceTree = "<group>"; };
+		B5B71C7729F0EC5000D6BFB8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		B537CB6C29EF32D3008E70CC /* TradeME */ = {
 			isa = PBXGroup;
 			children = (
+				B5B71C7129F0E98000D6BFB8 /* Extensions */,
 				B537CBB329EFA802008E70CC /* Helper */,
 				B537CBAF29EFA224008E70CC /* Reusable */,
 				B537CBA729EF8FF8008E70CC /* View Modifiers */,
@@ -220,9 +223,9 @@
 		B537CBB329EFA802008E70CC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				B58691CD29F0994C00643258 /* ObjectSavable */,
+				B5B71C7629F0EC4500D6BFB8 /* Enum */,
 				B537CBB429EFA80D008E70CC /* URLMaker.swift */,
-				B58691D029F099AE00643258 /* UserDefaultsHelper.swift */,
+				B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -251,19 +254,27 @@
 			path = CardListModificationView;
 			sourceTree = "<group>";
 		};
-		B58691CD29F0994C00643258 /* ObjectSavable */ = {
-			isa = PBXGroup;
-			children = (
-				B58691CE29F0995F00643258 /* ObjectSavable.swift */,
-			);
-			path = ObjectSavable;
-			sourceTree = "<group>";
-		};
 		B5B71C6429F0B1AE00D6BFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5B71C7129F0E98000D6BFB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5B71C7629F0EC4500D6BFB8 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B5B71C7729F0EC5000D6BFB8 /* Constants.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,9 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58691D129F099AE00643258 /* UserDefaultsHelper.swift in Sources */,
+				B5B71C7829F0EC5000D6BFB8 /* Constants.swift in Sources */,
 				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */,
+				B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */,
+				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
@@ -418,7 +431,6 @@
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,
-				B58691CF29F0995F00643258 /* ObjectSavable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

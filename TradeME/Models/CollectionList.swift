@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CollectionList: Identifiable {
+struct CollectionList: Identifiable, Codable {
     let title: String
     let descrption: String?
     var cards: [BasicCard]
