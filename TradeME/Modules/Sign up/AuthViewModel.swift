@@ -19,13 +19,6 @@ class AuthViewModel: ObservableObject {
     auth.createUser(withEmail: email, password: password) { authResult, error in
       if let error = error {
         self.error = AuthError(message: error.localizedDescription)
-          if Auth.auth().currentUser != nil {
-            // User is signed in.
-            // ...
-          } else {
-            // No user is signed in.
-            // ...
-          }
       } else {
         print("User created successfully")
       }

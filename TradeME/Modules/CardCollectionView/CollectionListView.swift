@@ -25,7 +25,6 @@ struct CollectionListView: View {
                     }
                 }
             }
-            .hiddenNavigationBarStyle()
             .onAppear(perform: {
                 fetchCollectionFromFireStore()
             })
@@ -81,7 +80,15 @@ struct CollectionListView: View {
     private func createdNewList() {
         let newList = CollectionList(title: title, descrption: descrption, cards: [])
         collections.append(newList)
-        saveNewList()
+        firestoreService.saveDocument(collectionName: FirestoreCollectionName.CardCollection.rawValue, data: newList.toFirestoreOject(), documentId: firestoreService.currentUser?.uid ?? "") { result in
+            switch result {
+            case .success:
+                print("Document saved successfully")
+            case .failure(let error):
+                print("Error saving document: \(error.localizedDescription)")
+            }
+        }
+//        saveNewList()
         didCreateNewList = true
     }
 }

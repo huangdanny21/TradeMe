@@ -87,16 +87,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ABF9A734-899D-44FF-98F2-ED55EC8CB571"
+            uuid = "CBD0B84D-B46C-4AC3-94BC-C7E8BC9AC2B5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TradeME/Modules/Sign up/AuthViewModel.swift"
+            filePath = "TradeME/Modules/CardCollectionView/CollectionListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "signUp()"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "createdNewList()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B997C6F-4DAE-4367-AA5B-B3939DA71548"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TradeME/Modules/CardCollectionView/CollectionListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "createdNewList()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
