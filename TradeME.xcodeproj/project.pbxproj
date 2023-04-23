@@ -26,7 +26,10 @@
 		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
 		B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9029F4C527006F8409 /* FireStoreService.swift */; };
-		B582AC9529F4D606006F8409 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B582AC9429F4D605006F8409 /* GoogleService-Info.plist */; };
+		B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9729F4D8EE006F8409 /* SignUpView.swift */; };
+		B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9A29F4DB1D006F8409 /* LoginView.swift */; };
+		B582AC9F29F4E1C9006F8409 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9E29F4E1C9006F8409 /* AuthViewModel.swift */; };
+		B582ACA129F4E407006F8409 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B582ACA029F4E407006F8409 /* GoogleService-Info.plist */; };
 		B5B71C6D29F0B50600D6BFB8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */; };
 		B5B71C7029F0B53800D6BFB8 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71C6F29F0B53800D6BFB8 /* PopupView */; };
 		B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */; };
@@ -101,7 +104,10 @@
 		B537CBB929EFBC44008E70CC /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		B537CBBD29EFC856008E70CC /* CardListModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModificationView.swift; sourceTree = "<group>"; };
 		B582AC9029F4C527006F8409 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
-		B582AC9429F4D605006F8409 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B582AC9729F4D8EE006F8409 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		B582AC9A29F4DB1D006F8409 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B582AC9E29F4E1C9006F8409 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		B582ACA029F4E407006F8409 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListSavable.swift; sourceTree = "<group>"; };
 		B5B71C7729F0EC5000D6BFB8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -164,7 +170,7 @@
 		B537CB6129EF32D3008E70CC = {
 			isa = PBXGroup;
 			children = (
-				B582AC9429F4D605006F8409 /* GoogleService-Info.plist */,
+				B582ACA029F4E407006F8409 /* GoogleService-Info.plist */,
 				B537CB6C29EF32D3008E70CC /* TradeME */,
 				B537CB7D29EF32D4008E70CC /* TradeMETests */,
 				B537CB8729EF32D4008E70CC /* TradeMEUITests */,
@@ -249,6 +255,8 @@
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B582AC9929F4DB14006F8409 /* Login */,
+				B582AC9629F4D8E2006F8409 /* Sign up */,
 				B537CBBC29EFC783008E70CC /* CardListModificationView */,
 				B537CBBB29EFBDAA008E70CC /* Search */,
 				B537CBB629EFB919008E70CC /* CardCollectionView */,
@@ -312,6 +320,23 @@
 				B537CBBD29EFC856008E70CC /* CardListModificationView.swift */,
 			);
 			path = CardListModificationView;
+			sourceTree = "<group>";
+		};
+		B582AC9629F4D8E2006F8409 /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				B582AC9729F4D8EE006F8409 /* SignUpView.swift */,
+				B582AC9E29F4E1C9006F8409 /* AuthViewModel.swift */,
+			);
+			path = "Sign up";
+			sourceTree = "<group>";
+		};
+		B582AC9929F4DB14006F8409 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B582AC9A29F4DB1D006F8409 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B5B71C6429F0B1AE00D6BFB8 /* Frameworks */ = {
@@ -479,7 +504,7 @@
 			files = (
 				B537CB7529EF32D4008E70CC /* Preview Assets.xcassets in Resources */,
 				B537CB7229EF32D4008E70CC /* Assets.xcassets in Resources */,
-				B582AC9529F4D606006F8409 /* GoogleService-Info.plist in Resources */,
+				B582ACA129F4E407006F8409 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B582AC9F29F4E1C9006F8409 /* AuthViewModel.swift in Sources */,
 				B5B71C7829F0EC5000D6BFB8 /* Constants.swift in Sources */,
 				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */,
@@ -520,6 +546,8 @@
 				B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */,
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
+				B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */,
+				B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */,
 				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,7 +722,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = meep.ygo.trade;
+				PRODUCT_BUNDLE_IDENTIFIER = meep.ygo.TradeME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -725,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = meep.ygo.Trade;
+				PRODUCT_BUNDLE_IDENTIFIER = meep.ygo.TradeME;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

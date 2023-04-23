@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>978199062924-ibos7n1ob0a2hmc1njqm4ksud6hd0j41.apps.googleusercontent.com</string>
+	<string>1091203583200-s2mgfeu5bae82cbbmkuf93l2hflkq29e.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.978199062924-ibos7n1ob0a2hmc1njqm4ksud6hd0j41</string>
+	<string>com.googleusercontent.apps.1091203583200-s2mgfeu5bae82cbbmkuf93l2hflkq29e</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCAcDhKN3d9GWCBAvgOZ0weZbp0z5wVha8</string>
+	<string>AIzaSyA9hOva_Tq4tRQPRenxbKJpnptahwKRY4I</string>
 	<key>GCM_SENDER_ID</key>
-	<string>978199062924</string>
+	<string>1091203583200</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>meep.ygo.trade</string>
+	<string>meep.ygo.TradeME</string>
 	<key>PROJECT_ID</key>
-	<string>trade-48657</string>
+	<string>trade-me-589f5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>trade-48657.appspot.com</string>
+	<string>trade-me-589f5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:978199062924:ios:1fa654b2c9b95e55a90ea9</string>
+	<string>1:1091203583200:ios:693ae6b0b994d007709485</string>
 </dict>
 </plist>

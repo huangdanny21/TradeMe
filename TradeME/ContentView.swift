@@ -16,6 +16,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                NavigationLink(destination: LoginView()) {
+                    Text("Login")
+                }
+                NavigationLink(destination: SignUpView()) {
+                    Text("Sign Up")
+                }
                 NavigationLink(destination: CollectionListView(collections: [])) {
                      Text("My Collections").padding().background(Color.red)
                  }
@@ -23,6 +29,7 @@ struct ContentView: View {
             .padding()
         }
         .onAppear {
+            
         }
     }
 }
