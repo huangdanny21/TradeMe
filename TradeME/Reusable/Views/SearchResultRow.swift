@@ -13,9 +13,14 @@ struct SearchResultRowViewModel: Identifiable  {
     let id = UUID()
 }
 
+enum SearchResultAccesory {
+    case add
+    case minusAdd
+}
+
 struct SearchResultRow: View {
     let result: SearchResultRowViewModel
-    var addCard : ((SearchResultRowViewModel) -> ())?
+    var addCard: ((SearchResultRowViewModel) -> ())?
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -31,8 +36,10 @@ struct SearchResultRow: View {
                 }
             }
             Spacer()
-            Button("Add") {
-                addCard?(result)
+            HStack {
+                Button("+") {
+                    
+                }.frame(width: 50,height: 50)
             }
         }
     }

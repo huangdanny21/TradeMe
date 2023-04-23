@@ -7,16 +7,12 @@
 
 import Foundation
 
-protocol Card {
-    
-}
-
 struct YGOCardWrapper: Codable {
     let status: String
     let data: YGOCard
 }
 
-struct YGOCard: Card, Codable {
+struct YGOCard: Codable {
     let name, text, cardType, type: String
     let family: String
     let atk, def, level: Int

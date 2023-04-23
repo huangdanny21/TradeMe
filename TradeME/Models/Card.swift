@@ -12,7 +12,7 @@ struct CardResponseContainer: Codable {
     let data: [BasicCard]
 }
 
-struct BasicCard: Identifiable, Card, Codable {
+struct BasicCard: Identifiable, Codable {
     let name, printTag, rarity: String
     let priceData: PriceData
     let id = 0

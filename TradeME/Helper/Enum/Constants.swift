@@ -10,5 +10,6 @@ import Foundation
 enum Constants {
     enum CardCollection: String {
         case savedCollection
+        case newCollection
     }
 }

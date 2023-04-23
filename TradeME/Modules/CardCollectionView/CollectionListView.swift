@@ -9,23 +9,26 @@ import SwiftUI
 
 struct CollectionListView: View {
     
-    @State var collections: [CollectionList]
+//    @State var collections: [CollectionList]
     @State private var presentAlert = false
     @State private var title: String = ""
     @State private var descrption: String = ""
     @State private var didCreateNewList = false
     
+    @State var cardCollectionList: [CollectionListHashable]
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(collections) { collection in
-                    NavigationLink(destination: CardListModificationView(list: collection, cardList: [])) {
-                        Text(collection.title)
+                ForEach(cardCollectionList) { collection in
+                    NavigationLink(destination: CardListModificationView(cardList: [], collectionList: collection)) {
+                        Text(collection.key)
                     }
                 }
             }
+            .hiddenNavigationBarStyle()
             .onAppear(perform: {
-                collections.append(contentsOf: fetchSavedCollections())
+                fetchSavedCollections()
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -48,15 +51,16 @@ struct CollectionListView: View {
     
     // MARK: - Private
     
-    private func fetchSavedCollections() -> [CollectionList] {
+    private func fetchSavedCollections() {
         let userDefaults = UserDefaults.standard
         do {
-            let previousCollection = try userDefaults.getObject(forKey: Constants.CardCollection.savedCollection.rawValue, castTo: [CollectionList].self)
-            collections.append(contentsOf: previousCollection)
+            let previousCardCollectionList = try userDefaults.getObject(forKey: Constants.CardCollection.savedCollection.rawValue, castTo: [CollectionListHashable].self)
+            
+            cardCollectionList = previousCardCollectionList
+            
         } catch {
             print(error.localizedDescription)
         }
-        return []
     }
     
     private func addNewCollection() {
@@ -65,11 +69,13 @@ struct CollectionListView: View {
     
     private func createdNewList() {
         let newList = CollectionList(title: title, descrption: descrption, cards: [])
-        collections.append(newList)
+        let newCollection = CollectionListHashable(key: title, collection: newList)
+        cardCollectionList.append(newCollection)
+
         let userDefaults = UserDefaults.standard
 
         do {
-             try userDefaults.setObject(collections, forKey: Constants.CardCollection.savedCollection.rawValue)
+             try userDefaults.setObject(cardCollectionList, forKey: Constants.CardCollection.savedCollection.rawValue)
 
         } catch {
             print(error.localizedDescription)

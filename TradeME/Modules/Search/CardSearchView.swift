@@ -34,7 +34,7 @@ struct CardSearchView: View {
     
     func fetch() {
         Task {
-            do {
+            do {    
                 let card = try await CardFetchService.cardPrice(for: searchText).data
                 card.forEach { card in
                     self.cards.append(SearchResultRowViewModel(result: card, searchText: searchText))
