@@ -7,11 +7,22 @@
 
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
+
+enum FirestoreCollectionName: String {
+    case CardCollection
+}
 
 class FirestoreService {
     static let shared = FirestoreService()
+    
+    
     private let db = Firestore.firestore()
 
+    var currentUser: User? {
+        Auth.auth().currentUser
+    }
+    
     func getDocument<T: Codable>(collectionName: String, documentId: String, completion: @escaping (Result<T, Error>) -> Void) {
         let docRef = db.collection(collectionName).document(documentId)
         docRef.getDocument { (document, error) in

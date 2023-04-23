@@ -8,27 +8,26 @@
 import SwiftUI
 
 struct CollectionListView: View {
-    
-//    @State var collections: [CollectionList]
+    let firestoreService = FirestoreService.shared
+
+    @State var collections: [CollectionList]
     @State private var presentAlert = false
     @State private var title: String = ""
     @State private var descrption: String = ""
     @State private var didCreateNewList = false
-    
-    @State var cardCollectionList: [CollectionListHashable]
-    
+        
     var body: some View {
         NavigationView {
             List {
-                ForEach(cardCollectionList) { collection in
-                    NavigationLink(destination: CardListModificationView(cardList: [], collectionList: collection)) {
-                        Text(collection.key)
+                ForEach(collections) { collection in
+                    NavigationLink(destination: CardListModificationView(list: collection, cardList: [])) {
+                        Text(collection.title)
                     }
                 }
             }
             .hiddenNavigationBarStyle()
             .onAppear(perform: {
-                fetchSavedCollections()
+                fetchCollectionFromFireStore()
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -51,15 +50,16 @@ struct CollectionListView: View {
     
     // MARK: - Private
     
-    private func fetchSavedCollections() {
-        let userDefaults = UserDefaults.standard
-        do {
-            let previousCardCollectionList = try userDefaults.getObject(forKey: Constants.CardCollection.savedCollection.rawValue, castTo: [CollectionListHashable].self)
-            
-            cardCollectionList = previousCardCollectionList
-            
-        } catch {
-            print(error.localizedDescription)
+    private func fetchCollectionFromFireStore() {
+        // Retrieve the model from Firestore
+        
+        firestoreService.getDocument(collectionName: FirestoreCollectionName.CardCollection.rawValue, documentId: firestoreService.currentUser?.uid ?? UUID().uuidString) { (result: Result<[CollectionList], Error>) in
+            switch result {
+            case .success(let myModel):
+                print("Retrieved model: \(myModel)")
+            case .failure(let error):
+                print("Error retrieving model: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -67,19 +67,21 @@ struct CollectionListView: View {
         presentAlert = true
     }
     
+    private func saveNewList() {
+        firestoreService.saveDocument(collectionName: FirestoreCollectionName.CardCollection.rawValue, data: collections, documentId: firestoreService.currentUser?.uid ?? "") { result in
+            switch result {
+            case .success:
+                print("Document saved successfully")
+            case .failure(let error):
+                print("Error saving document: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     private func createdNewList() {
         let newList = CollectionList(title: title, descrption: descrption, cards: [])
-        let newCollection = CollectionListHashable(key: title, collection: newList)
-        cardCollectionList.append(newCollection)
-
-        let userDefaults = UserDefaults.standard
-
-        do {
-             try userDefaults.setObject(cardCollectionList, forKey: Constants.CardCollection.savedCollection.rawValue)
-
-        } catch {
-            print(error.localizedDescription)
-        }
+        collections.append(newList)
+        saveNewList()
         didCreateNewList = true
     }
 }

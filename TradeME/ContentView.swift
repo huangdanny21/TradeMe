@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct ContentView: View {
     
@@ -14,14 +16,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: CollectionListView(cardCollectionList: [])) {
+                NavigationLink(destination: CollectionListView(collections: [])) {
                      Text("My Collections").padding().background(Color.red)
                  }
             }
             .padding()
         }
         .onAppear {
-            
         }
     }
 }

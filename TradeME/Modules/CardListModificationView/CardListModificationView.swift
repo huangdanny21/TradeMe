@@ -10,11 +10,10 @@ import PopupView
 
 struct CardListModificationView: View {
     
-//    @State var list: CollectionList
+    @State var list: CollectionList
     @State var showingPopup = false
     
     @State var cardList: [BasicCard]
-    @State var collectionList: CollectionListHashable
     
     var body: some View {
         NavigationView {
