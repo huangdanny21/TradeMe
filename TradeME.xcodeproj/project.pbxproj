@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526083529F4FAF700390B19 /* CardModificationView.swift */; };
 		B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */; };
 		B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6F29EF32D3008E70CC /* ContentView.swift */; };
 		B537CB7229EF32D4008E70CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B537CB7129EF32D4008E70CC /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB729EFBA00008E70CC /* CollectionListView.swift */; };
 		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
+		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9029F4C527006F8409 /* FireStoreService.swift */; };
 		B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9729F4D8EE006F8409 /* SignUpView.swift */; };
 		B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9A29F4DB1D006F8409 /* LoginView.swift */; };
@@ -82,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B526083529F4FAF700390B19 /* CardModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModificationView.swift; sourceTree = "<group>"; };
 		B537CB6A29EF32D3008E70CC /* TradeME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEApp.swift; sourceTree = "<group>"; };
 		B537CB6F29EF32D3008E70CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		B537CBB729EFBA00008E70CC /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		B537CBB929EFBC44008E70CC /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		B537CBBD29EFC856008E70CC /* CardListModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModificationView.swift; sourceTree = "<group>"; };
+		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B582AC9029F4C527006F8409 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 		B582AC9729F4D8EE006F8409 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B582AC9A29F4DB1D006F8409 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B5812A3129F60AA500C863B0 /* Edit Profile */,
 				B582AC9929F4DB14006F8409 /* Login */,
 				B582AC9629F4D8E2006F8409 /* Sign up */,
 				B537CBBC29EFC783008E70CC /* CardListModificationView */,
@@ -318,8 +323,17 @@
 			isa = PBXGroup;
 			children = (
 				B537CBBD29EFC856008E70CC /* CardListModificationView.swift */,
+				B526083529F4FAF700390B19 /* CardModificationView.swift */,
 			);
 			path = CardListModificationView;
+			sourceTree = "<group>";
+		};
+		B5812A3129F60AA500C863B0 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B5812A3229F60C9C00C863B0 /* EditProfileView.swift */,
+			);
+			path = "Edit Profile";
 			sourceTree = "<group>";
 		};
 		B582AC9629F4D8E2006F8409 /* Sign up */ = {
@@ -543,7 +557,9 @@
 				B537CBB229EFA23D008E70CC /* SearchResultRow.swift in Sources */,
 				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,
 				B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */,
+				B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */,
 				B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */,
+				B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */,
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 				B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */,

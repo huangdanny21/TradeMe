@@ -15,8 +15,7 @@ enum FirestoreCollectionName: String {
 
 class FirestoreService {
     static let shared = FirestoreService()
-    
-    
+
     private let db = Firestore.firestore()
 
     var currentUser: User? {

@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct CollectionListHashable: Identifiable, Codable {
-    let key: String
-    let collection: CollectionList
-    var id = UUID()
-}
-
 struct CollectionList: Identifiable, Codable {
     let title: String
     let descrption: String

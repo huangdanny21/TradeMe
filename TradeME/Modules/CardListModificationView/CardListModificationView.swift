@@ -8,12 +8,40 @@
 import SwiftUI
 import PopupView
 
+struct CardContainer: Identifiable {
+    var id =  UUID().uuidString
+    
+    var name: String
+    var count: Int
+    var card: BasicCard
+    
+    var total: Double {
+        Double(count) *  (card.priceData.data?.prices.average ?? 0)
+    }
+    
+    var totalString: String {
+        total.formatted(.currency(code: "USD"))
+    }
+}
+
 struct CardListModificationView: View {
     
     @State var list: CollectionList
     @State var showingPopup = false
     
-    @State var cardList: [BasicCard]
+    @State var cardList: [CardContainer]
+    
+    var total: Double {
+        var total: Double = 0
+        cardList.forEach { container in
+            total += container.total
+        }
+        return total
+    }
+    
+    var totalString: String {
+        total.formatted(.currency(code: "USD"))
+    }
     
     var body: some View {
         NavigationView {
@@ -23,17 +51,17 @@ struct CardListModificationView: View {
                 }
                 
                 List {
-                    ForEach(cardList, id: \.id) { list in
-                        SearchResultRow(result: SearchResultRowViewModel(result: list, searchText: ""))
+                    ForEach(cardList, id: \.card.id) { list in
+                        CardModificationView(card: list)
                     }
                 }
-                .toolbar {
-                    Button("Save") {
-                        save()
-                    }
+                Text("Total: \(total.formatted(.currency(code: "USD")))")
+            }
+            .toolbar {
+                Button("Save") {
+                    save()
                 }
             }
-            
         }
         .hiddenNavigationBarStyle()
         .popup(isPresented: $showingPopup) {
@@ -52,8 +80,7 @@ struct CardListModificationView: View {
     // MARK: - Private
     
     func addCard(with card: SearchResultRowViewModel) {
-        cardList.append(card.result)
-//        list.cards.append(card.result)
+        cardList.append(CardContainer(name: card.searchText, count: 1, card: card.result))
     }
     
     func save() {

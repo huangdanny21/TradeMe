@@ -31,14 +31,14 @@ struct SearchResultRow: View {
                     Text(result.result.rarity).foregroundColor(.black).font(.system(size: 13))
                 }
                 HStack {
-                    let formatted = (result.result.priceData.data?.prices.high ?? 0).formatted(.currency(code: "USD"))
+                    let formatted = (result.result.priceData.data?.prices.average ?? 0).formatted(.currency(code: "USD"))
                     Text(formatted).foregroundColor(.red).lineLimit(1).font(.system(size: 13))
                 }
             }
             Spacer()
             HStack {
                 Button("+") {
-                    
+                    addCard?(result)
                 }.frame(width: 50,height: 50)
             }
         }

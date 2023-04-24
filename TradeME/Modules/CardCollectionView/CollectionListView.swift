@@ -88,9 +88,7 @@ struct CollectionListView: View {
                 print("Error saving document: \(error.localizedDescription)")
             }
         }
-//        saveNewList()
         didCreateNewList = true
     }
 }
 
-// This page will fetch if you have existing first, then we load it

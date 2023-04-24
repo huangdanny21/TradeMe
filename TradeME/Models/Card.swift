@@ -15,7 +15,7 @@ struct CardResponseContainer: Codable {
 struct BasicCard: Identifiable, Codable {
     let name, printTag, rarity: String
     let priceData: PriceData
-    let id = 0
+    let id = UUID().uuidString
     
     enum CodingKeys: String, CodingKey {
         case name
