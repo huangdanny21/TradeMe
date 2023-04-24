@@ -16,7 +16,7 @@
 		B537CB8929EF32D4008E70CC /* TradeMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */; };
 		B537CB8B29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */; };
 		B537CB9929EF55E2008E70CC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9829EF55E2008E70CC /* API.swift */; };
-		B537CB9C29EF598B008E70CC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* Card.swift */; };
+		B537CB9C29EF598B008E70CC /* BasicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9B29EF598B008E70CC /* BasicCard.swift */; };
 		B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB9E29EF6924008E70CC /* CardFetchService.swift */; };
 		B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA329EF88AA008E70CC /* CardSearchView.swift */; };
 		B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */; };
@@ -29,6 +29,8 @@
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
+		B5812A3929F61FD900C863B0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3829F61FD900C863B0 /* Card.swift */; };
+		B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3A29F620BC00C863B0 /* CardSet.swift */; };
 		B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9029F4C527006F8409 /* FireStoreService.swift */; };
 		B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9729F4D8EE006F8409 /* SignUpView.swift */; };
 		B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9A29F4DB1D006F8409 /* LoginView.swift */; };
@@ -98,7 +100,7 @@
 		B537CB8829EF32D4008E70CC /* TradeMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITests.swift; sourceTree = "<group>"; };
 		B537CB8A29EF32D4008E70CC /* TradeMEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B537CB9829EF55E2008E70CC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		B537CB9B29EF598B008E70CC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B537CB9B29EF598B008E70CC /* BasicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCard.swift; sourceTree = "<group>"; };
 		B537CB9E29EF6924008E70CC /* CardFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFetchService.swift; sourceTree = "<group>"; };
 		B537CBA329EF88AA008E70CC /* CardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchView.swift; sourceTree = "<group>"; };
 		B537CBA829EF900A008E70CC /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
@@ -111,6 +113,8 @@
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
+		B5812A3829F61FD900C863B0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B5812A3A29F620BC00C863B0 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		B582AC9029F4C527006F8409 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 		B582AC9729F4D8EE006F8409 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B582AC9A29F4DB1D006F8409 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -243,10 +247,12 @@
 		B537CB9A29EF595E008E70CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B537CB9B29EF598B008E70CC /* Card.swift */,
+				B537CB9B29EF598B008E70CC /* BasicCard.swift */,
 				B537CBAA29EF9C48008E70CC /* YGOCard.swift */,
 				B537CBB929EFBC44008E70CC /* CollectionList.swift */,
 				B5812A3429F619E700C863B0 /* StoreCredit.swift */,
+				B5812A3829F61FD900C863B0 /* Card.swift */,
+				B5812A3A29F620BC00C863B0 /* CardSet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 			files = (
 				B582AC9F29F4E1C9006F8409 /* AuthViewModel.swift in Sources */,
 				B5B71C7829F0EC5000D6BFB8 /* Constants.swift in Sources */,
+				B5812A3929F61FD900C863B0 /* Card.swift in Sources */,
 				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */,
 				B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */,
@@ -560,7 +567,8 @@
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
-				B537CB9C29EF598B008E70CC /* Card.swift in Sources */,
+				B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */,
+				B537CB9C29EF598B008E70CC /* BasicCard.swift in Sources */,
 				B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */,
 				B537CBB229EFA23D008E70CC /* SearchResultRow.swift in Sources */,
 				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,

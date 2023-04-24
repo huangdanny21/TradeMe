@@ -1,5 +1,5 @@
 //
-//  Card.swift
+//  CardSet.swift
 //  TradeME
 //
 //  Created by Zhi Yong Huang on 4/23/23.
@@ -7,13 +7,11 @@
 
 import Foundation
 
-// This Card for price/Transaction history
-struct Card: Identifiable, Codable {
+struct CardSet: Identifiable, Codable {
     var id: UUID
     var name: String
-    var cardSet: String
+    var description: String
     var imageUrl: String
-    var rarity: String
     var price: Double
 }
 

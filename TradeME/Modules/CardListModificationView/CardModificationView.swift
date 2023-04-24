@@ -30,12 +30,11 @@ struct CardModificationView: View {
                 }
                 .frame(width: 50, height: 50)
                 .padding()
+                // Display the image with a cache key
+                WebImage(url: APIS.CardImage.name(name: card.name).url)
+                    .resizable()
+                    .scaledToFit()
             }
-            
-            // Display the image with a cache key
-            WebImage(url: APIS.CardImage.name(name: card.name).url)
-                .resizable()
-                .scaledToFit()
             
             VStack(alignment: .leading) {
                 Text("\(card.name)")
