@@ -13,33 +13,47 @@ struct EditProfileView: View {
     @State private var konamiId = ""
     
     var body: some View {
-        VStack {
-            TextField("Email", text: $email)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            TextField("Konami ID", text: $konamiId)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-            Button(action: {
-                saveProfileData()
-            }, label: {
-                Text("Save Changes")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(8)
-                    .padding(.horizontal)
-            })
+        Form {
+            Section(header: Text("Personal Information")) {
+                TextField("Email", text: $email)
+                TextField("Konami ID", text: $konamiId)
+                Button(action: {
+                    saveProfileData()
+                }, label: {
+                    Text("Save Changes")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                })
+            }
         }
         .navigationBarTitle("Edit Profile")
+        .onAppear {
+            // Retrieve user data from Firestore
+            let db = Firestore.firestore()
+            let currentUser = Auth.auth().currentUser
+            
+            db.collection("users").document(currentUser!.uid).getDocument { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching user data: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let snapshot = snapshot {
+                    let data = snapshot.data()
+                    if let email = data?["email"] as? String {
+                        self.email = email
+                    }
+                    if let konamiId = data?["konamiId"] as? String {
+                        self.konamiId = konamiId
+                    }
+                }
+            }
+        }
     }
     
     private func saveProfileData() {
