@@ -31,6 +31,10 @@
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
 		B5812A3929F61FD900C863B0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3829F61FD900C863B0 /* Card.swift */; };
 		B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3A29F620BC00C863B0 /* CardSet.swift */; };
+		B5812A3D29F6250C00C863B0 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3C29F6250C00C863B0 /* Tournament.swift */; };
+		B5812A3F29F6268C00C863B0 /* TMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3E29F6268C00C863B0 /* TMUser.swift */; };
+		B5812A4129F6276100C863B0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4029F6276100C863B0 /* Transaction.swift */; };
+		B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4229F62A2F00C863B0 /* TournamentManager.swift */; };
 		B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9029F4C527006F8409 /* FireStoreService.swift */; };
 		B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9729F4D8EE006F8409 /* SignUpView.swift */; };
 		B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9A29F4DB1D006F8409 /* LoginView.swift */; };
@@ -115,6 +119,10 @@
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
 		B5812A3829F61FD900C863B0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B5812A3A29F620BC00C863B0 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		B5812A3C29F6250C00C863B0 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		B5812A3E29F6268C00C863B0 /* TMUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUser.swift; sourceTree = "<group>"; };
+		B5812A4029F6276100C863B0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B5812A4229F62A2F00C863B0 /* TournamentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentManager.swift; sourceTree = "<group>"; };
 		B582AC9029F4C527006F8409 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 		B582AC9729F4D8EE006F8409 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B582AC9A29F4DB1D006F8409 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -253,6 +261,9 @@
 				B5812A3429F619E700C863B0 /* StoreCredit.swift */,
 				B5812A3829F61FD900C863B0 /* Card.swift */,
 				B5812A3A29F620BC00C863B0 /* CardSet.swift */,
+				B5812A3C29F6250C00C863B0 /* Tournament.swift */,
+				B5812A3E29F6268C00C863B0 /* TMUser.swift */,
+				B5812A4029F6276100C863B0 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +275,7 @@
 				B537CB9E29EF6924008E70CC /* CardFetchService.swift */,
 				B537CB9829EF55E2008E70CC /* API.swift */,
 				B5812A3629F61CA500C863B0 /* StoreCreditService.swift */,
+				B5812A4229F62A2F00C863B0 /* TournamentManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -561,12 +573,15 @@
 				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */,
 				B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */,
+				B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */,
 				B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */,
+				B5812A3F29F6268C00C863B0 /* TMUser.swift in Sources */,
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
+				B5812A3D29F6250C00C863B0 /* Tournament.swift in Sources */,
 				B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* BasicCard.swift in Sources */,
 				B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */,
@@ -579,6 +594,7 @@
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 				B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */,
+				B5812A4129F6276100C863B0 /* Transaction.swift in Sources */,
 				B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */,
 				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,
 			);
