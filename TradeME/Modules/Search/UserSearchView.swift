@@ -7,13 +7,20 @@
 
 import Foundation
 import SwiftUI
-import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 struct UserSearchView: View {
     @State private var searchText = ""
     @State private var users: [FSUser] = []
     
     var onUserSelected: ((FSUser) -> Void)
+    
+    init(onUserSelected: @escaping (FSUser) -> Void) {
+        self.onUserSelected = onUserSelected
+        self._users = State(initialValue: [])
+        searchUsers()
+    }
     
     var body: some View {
         VStack {
@@ -45,6 +52,23 @@ struct UserSearchView: View {
     }
     
     private func searchUsers() {
-        // code to search for users in Firestore and update users property
+        let db = Firestore.firestore()
+        db.collection("users")
+            .whereField("id", isGreaterThan: searchText)
+            .getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    print("Error searching for users: \(error.localizedDescription)")
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents found")
+                    return
+                }
+                let users = documents.compactMap { queryDocumentSnapshot -> FSUser? in
+                    return try? queryDocumentSnapshot.data(as: FSUser.self)
+                }
+                self.users = users
+            }
     }
+
 }
