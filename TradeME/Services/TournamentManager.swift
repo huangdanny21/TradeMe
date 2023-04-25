@@ -51,18 +51,18 @@ class TournamentManager: ObservableObject {
     }
     
     func announceRounds(for tournament: Tournament) {
-        var players = tournament.rounds.flatMap { $0.players }
-        players.shuffle()
-        var rounds: [Round] = []
-        for i in 1...4 {
-            let round = Round(number: i, date: Date(), players: Array(players.prefix(4)))
-            players.removeFirst(4)
-            rounds.append(round)
-        }
-        do {
-            try db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
-        } catch {
-            print("Error updating tournament: \(error.localizedDescription)")
-        }
+//        var players = tournament.rounds.flatMap { $0.players }
+//        players.shuffle()
+//        var rounds: [Round] = []
+//        for i in 1...4 {
+//            let round = Round(number: i, date: Date(), players: Array(players.prefix(4)), m)
+//            players.removeFirst(4)
+//            rounds.append(round)
+//        }
+//        do {
+//            try db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
+//        } catch {
+//            print("Error updating tournament: \(error.localizedDescription)")
+//        }
     }
 }

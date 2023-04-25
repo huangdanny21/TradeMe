@@ -28,7 +28,8 @@ struct Tournament: Codable, Identifiable {
             "numberOfPlayers": numberOfPlayers,
             "entryFee": entryFee,
             "prizeMoney": prizeMoney,
-            "startDate": startDateString
+            "startDate": startDateString,
+            "rounds": rounds
         ]
     }
 }
@@ -38,6 +39,6 @@ struct Round: Codable, Identifiable {
     @DocumentID var id: String?
     var number: Int
     var date: Date
+    var matches: [Match]
     var players: [String] // UserId
 }
-

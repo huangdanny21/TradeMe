@@ -29,7 +29,7 @@ class TournamentListViewModel: ObservableObject {
                 }
                 
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 
                 self.tournaments = documents.compactMap { queryDocumentSnapshot -> Tournament? in
                     let data = queryDocumentSnapshot.data()

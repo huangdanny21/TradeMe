@@ -11,7 +11,7 @@ struct CollectionList: Identifiable, Codable {
     let title: String
     let descrption: String
     var cards: [BasicCard]
-    var id = UUID().uuidString
+    var id: String?
     var count = 0
 }
 
