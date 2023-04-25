@@ -6,80 +6,97 @@
 //
 
 import SwiftUI
-import Firebase
-import PopupView
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct EditProfileView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var session: SessionStore
-    @State private var firstName: String
-    @State private var lastName: String
-    @State private var email: String
-    @State private var konamiId: String
-    @State private var userName: String
-
-    init(session: SessionStore) {
-        self.session = session
-        if let user = session.user {
-            self._firstName = State(wrappedValue: user.firstName ?? "")
-            self._lastName = State(wrappedValue: user.lastName ?? "")
-            self._email = State(wrappedValue: user.email)
-            self._konamiId = State(wrappedValue: user.konamiId ?? "")
-            self._userName = State(wrappedValue: user.userName ?? "")
-        } else {
-            self._firstName = State(wrappedValue: "")
-            self._lastName = State(wrappedValue: "")
-            self._email = State(wrappedValue: "")
-            self._konamiId = State(wrappedValue: "")
-            self._userName = State(wrappedValue: "")
-        }
-    }
-
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var email: String = ""
+    @State var konamiId: String = ""
+    @State var userName: String = ""
+    
+    let userId: String
+    
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("PERSONAL INFO")) {
-                    TextField("First name", text: $firstName)
-                    TextField("Last name", text: $lastName)
-                    TextField("Email", text: $email)
-                }
-                Section(header: Text("OTHER INFO")) {
-                    TextField("Konami ID", text: $konamiId)
-                    TextField("Username", text: $userName)
-                }
-                Button(action: save) {
-                    Text("Save")
-                }
-                .buttonStyle(RoundedButtonStyle())
-                .padding(.top, 20)
-                .accentColor(.green)
+        Form {
+            Section(header: Text("Personal Information")) {
+                TextField("First Name", text: $firstName)
+                TextField("Last Name", text: $lastName)
             }
-            .navigationBarTitle("Edit Profile", displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: dismiss) {
-                Text("Cancel")
-            })
+            
+            Section(header: Text("Account Information")) {
+                TextField("Email", text: $email)
+                TextField("Username", text: $userName)
+            }
+            
+            Section(header: Text("Konami Information")) {
+                TextField("Konami ID", text: $konamiId)
+            }
+            
+            Button("Save Changes") {
+                saveChanges()
+            }
         }
-    }
+        .navigationTitle("Edit Profile")
 
-    private func save() {
-        let updatedUser = FSUser(id: session.user!.id,
-                                 firstName: firstName,
-                                 lastName: lastName,
-                                 email: email,
-                                 konamiId: konamiId,
-                                 userName: userName)
-        
-        session.updateUser(updatedUser) { error in
-            if let error = error {
-                print("Error updating user: \(error.localizedDescription)")
+        .padding()
+        .onAppear(perform: fetchUserData)
+    }
+    
+    func fetchUserData() {
+        fetchUser(withId: userId) { (user, error) in
+            if let user = user {
+                firstName = user.firstName ?? ""
+                lastName = user.lastName ?? ""
+                email = user.email
+                konamiId = user.konamiId ?? ""
+                userName = user.userName ?? ""
+            } else if let error = error {
+                // handle the error
             } else {
-                dismiss()
+                // handle the case where the document doesn't exist
             }
         }
     }
-
-
-    private func dismiss() {
-        presentationMode.wrappedValue.dismiss()
+    
+    func fetchUser(withId id: String, completion: @escaping (FSUser?, Error?) -> Void) {
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(id)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                do {
+                    let user = try document.data(as: FSUser.self)
+                    completion(user, nil)
+                } catch {
+                    completion(nil, error)
+                }
+            } else if let error = error {
+                completion(nil, error)
+            } else {
+                completion(nil, nil)
+            }
+        }
+    }
+    
+    func saveChanges() {
+        let db = Firestore.firestore()
+        let userRef = db.collection("users").document(userId)
+        
+        userRef.updateData([
+            "first_name": firstName,
+            "last_name": lastName,
+            "email": email,
+            "konamiId": konamiId,
+            "userName": userName
+        ]) { error in
+            if let error = error {
+                print("Error updating user: \(error)")
+            } else {
+                print("User updated successfully!")
+            }
+        }
     }
 }
+

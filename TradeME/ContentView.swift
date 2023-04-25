@@ -40,19 +40,12 @@ struct ContentView: View {
                     Text("Message")
                 }
             
-            if isLoggedIn {
-                EditProfileView(session: SessionStore())
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Profile")
-                    }
-            } else {
-                LoginView()
-                    .tabItem {
-                        Image(systemName: "person")
-                        Text("Login")
-                    }
-            }
+            ProfileContainerView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+                .environmentObject(SessionStore())
         }
         .onAppear {
             checkLoginStatus()

@@ -17,6 +17,7 @@
 		B513629E29F8781C00831874 /* FSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629D29F8781C00831874 /* FSUser.swift */; };
 		B51362A029F8815300831874 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629F29F8815300831874 /* SessionStore.swift */; };
 		B51362A229F8819100831874 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51362A129F8819100831874 /* RoundedButtonStyle.swift */; };
+		B51362A529F88A1100831874 /* ProfileContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51362A429F88A1100831874 /* ProfileContainerView.swift */; };
 		B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526083529F4FAF700390B19 /* CardModificationView.swift */; };
 		B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */; };
 		B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6F29EF32D3008E70CC /* ContentView.swift */; };
@@ -130,6 +131,7 @@
 		B513629D29F8781C00831874 /* FSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSUser.swift; sourceTree = "<group>"; };
 		B513629F29F8815300831874 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		B51362A129F8819100831874 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
+		B51362A429F88A1100831874 /* ProfileContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContainerView.swift; sourceTree = "<group>"; };
 		B526083529F4FAF700390B19 /* CardModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModificationView.swift; sourceTree = "<group>"; };
 		B537CB6A29EF32D3008E70CC /* TradeME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEApp.swift; sourceTree = "<group>"; };
@@ -261,6 +263,13 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
+		B51362A329F88A0700831874 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B537CB6129EF32D3008E70CC = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +367,7 @@
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B51362A329F88A0700831874 /* Profile */,
 				B578E34A29F85EA00056481E /* Message */,
 				B537CBB629EFB919008E70CC /* CardCollection */,
 				B537CBBC29EFC783008E70CC /* CardListModification */,
@@ -449,6 +459,7 @@
 				B513629329F8726F00831874 /* Message List */,
 				B513628F29F8710F00831874 /* ChatViewModel.swift */,
 				B513629129F8719A00831874 /* ChatView.swift */,
+				B51362A429F88A1100831874 /* ProfileContainerView.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -756,6 +767,7 @@
 				B51362A029F8815300831874 /* SessionStore.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
+				B51362A529F88A1100831874 /* ProfileContainerView.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
 				B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */,
 				B513629A29F873FE00831874 /* MessageListView.swift in Sources */,
