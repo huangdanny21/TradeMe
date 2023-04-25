@@ -41,7 +41,7 @@ struct ContentView: View {
                 }
             
             if isLoggedIn {
-                EditProfileView()
+                EditProfileView(session: SessionStore())
                     .tabItem {
                         Image(systemName: "person")
                         Text("Profile")

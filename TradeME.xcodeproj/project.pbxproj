@@ -15,6 +15,8 @@
 		B513629A29F873FE00831874 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629929F873FE00831874 /* MessageListView.swift */; };
 		B513629C29F8767500831874 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629B29F8767500831874 /* UserSearchView.swift */; };
 		B513629E29F8781C00831874 /* FSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629D29F8781C00831874 /* FSUser.swift */; };
+		B51362A029F8815300831874 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629F29F8815300831874 /* SessionStore.swift */; };
+		B51362A229F8819100831874 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51362A129F8819100831874 /* RoundedButtonStyle.swift */; };
 		B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526083529F4FAF700390B19 /* CardModificationView.swift */; };
 		B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */; };
 		B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6F29EF32D3008E70CC /* ContentView.swift */; };
@@ -126,6 +128,8 @@
 		B513629929F873FE00831874 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		B513629B29F8767500831874 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		B513629D29F8781C00831874 /* FSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSUser.swift; sourceTree = "<group>"; };
+		B513629F29F8815300831874 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		B51362A129F8819100831874 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		B526083529F4FAF700390B19 /* CardModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModificationView.swift; sourceTree = "<group>"; };
 		B537CB6A29EF32D3008E70CC /* TradeME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeMEApp.swift; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 			children = (
 				B537CBB129EFA23D008E70CC /* SearchResultRow.swift */,
 				B578E34329F7B11D0056481E /* FirebaseImageView.swift */,
+				B51362A129F8819100831874 /* RoundedButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */,
 				B578E33729F781700056481E /* TournamentGenerator.swift */,
 				B578E33F29F7995D0056481E /* ImagePicker.swift */,
+				B513629F29F8815300831874 /* SessionStore.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -747,6 +753,7 @@
 				B5812A4F29F6367800C863B0 /* TournamentListView.swift in Sources */,
 				B5F7611829F7719900AAF264 /* RoundView.swift in Sources */,
 				B513629C29F8767500831874 /* UserSearchView.swift in Sources */,
+				B51362A029F8815300831874 /* SessionStore.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
@@ -777,6 +784,7 @@
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 				B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */,
 				B578E34429F7B11D0056481E /* FirebaseImageView.swift in Sources */,
+				B51362A229F8819100831874 /* RoundedButtonStyle.swift in Sources */,
 				B513629029F8710F00831874 /* ChatViewModel.swift in Sources */,
 				B5F7611229F7636100AAF264 /* FSCard.swift in Sources */,
 				B513629629F8730300831874 /* Conversation.swift in Sources */,
