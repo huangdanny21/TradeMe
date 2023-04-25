@@ -16,6 +16,7 @@ struct Tournament: Codable, Identifiable {
     var entryFee: Double
     var prizeMoney: Double
     var startDate: Date
+    var players: [Player]
     
     // convert the tournament object to a dictionary
     func toDict() -> [String: Any] {
@@ -23,14 +24,22 @@ struct Tournament: Codable, Identifiable {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let startDateString = dateFormatter.string(from: startDate)
         
+        let playerDicts = players.map { $0.toDict() }
+        
         return [
             "name": name,
             "numberOfPlayers": numberOfPlayers,
             "entryFee": entryFee,
             "prizeMoney": prizeMoney,
             "startDate": startDateString,
-            "rounds": rounds
+            "rounds": rounds,
+            "players": playerDicts
         ]
+    }
+    
+    // add a new player to the tournament
+    mutating func addPlayer(_ player: Player) {
+        players.append(player)
     }
 }
 

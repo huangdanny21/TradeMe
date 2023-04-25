@@ -81,7 +81,7 @@ struct TournamentCreationScreen: View {
         let combinedStartDateAndTime = combineDateAndTime(date: tournamentStartDate, time: tournamentStartTime)
         
         // create the tournament object
-        let tournament = Tournament(name: tournamentName, rounds: [], numberOfPlayers: numPlayers, entryFee: fee, prizeMoney: prize, startDate: combinedStartDateAndTime ?? Date())
+        let tournament = Tournament(name: tournamentName, rounds: [], numberOfPlayers: numPlayers, entryFee: fee, prizeMoney: prize, startDate: combinedStartDateAndTime ?? Date(), players: [])
         
         // submit the tournament to firestore
         isSubmitting = true

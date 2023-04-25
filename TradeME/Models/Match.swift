@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Match: Codable, Hashable {
+struct Match: Codable, Hashable, Identifiable {
+    var id: String?
     var player1: String
     var player2: String
     var result: String? // or another type to represent the match result

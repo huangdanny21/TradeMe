@@ -8,7 +8,6 @@
 import SwiftUI
 import Firebase
 
-
 struct ContentView: View {
     @State private var isLoggedIn = false
 
@@ -17,17 +16,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: LoginView()) {
-                    Text("Login")
-                }
-                NavigationLink(destination: SignUpView()) {
-                    Text("Sign Up")
-                }
                 if isLoggedIn {
                     NavigationLink(destination: EditProfileView()) {
                         Text("Edit Profile")
                     }
+                } else {
+                    NavigationLink(destination: LoginView()) {
+                        Text("Login")
+                    }
+                    NavigationLink(destination: SignUpView()) {
+                        Text("Sign Up")
+                    }
                 }
+                
                 NavigationLink(destination: CollectionListView(collections: [])) {
                      Text("My Collections")
                  }

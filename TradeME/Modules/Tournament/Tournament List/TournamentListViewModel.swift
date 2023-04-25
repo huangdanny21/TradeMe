@@ -44,7 +44,7 @@ class TournamentListViewModel: ObservableObject {
                         return nil
                     }
                     
-                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate)
+                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [])
                     return tournament
                 }
             }
@@ -52,7 +52,7 @@ class TournamentListViewModel: ObservableObject {
 
     
     func addTournament(name: String, numberOfPlayers: Int, entryFee: Double, prizeMoney: Double, startDate: Date) {
-        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate)
+        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [])
         do {
             let _ = try db.collection("tournaments").addDocument(from: newTournament)
         } catch {
