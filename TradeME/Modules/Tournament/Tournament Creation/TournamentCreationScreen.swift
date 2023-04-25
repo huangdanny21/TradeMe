@@ -12,7 +12,6 @@ struct TournamentCreationScreen: View {
     // view model
     @ObservedObject var viewModel: TournamentCreationViewModel
     @State private var showingImagePicker = false
-    @State private var selectedImage: UIImage?
 
     var body: some View {
         NavigationView {
@@ -77,10 +76,9 @@ struct TournamentCreationScreen: View {
     }
     
     func loadImage(image: UIImage?) {
-        selectedImage = image
+        viewModel.tournamentImage = image
     }
 }
-
 
 struct TournamentCreationScreen_Previews: PreviewProvider {
     static var previews: some View {
