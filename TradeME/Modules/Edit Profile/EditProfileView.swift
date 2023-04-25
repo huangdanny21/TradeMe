@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import PopupView
 
 struct EditProfileView: View {
     

@@ -271,18 +271,14 @@
 		B537CB9A29EF595E008E70CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B537CB9B29EF598B008E70CC /* BasicCard.swift */,
-				B537CBAA29EF9C48008E70CC /* YGOCard.swift */,
+				B5F7611329F765E300AAF264 /* Card */,
 				B537CBB929EFBC44008E70CC /* CollectionList.swift */,
 				B5812A3429F619E700C863B0 /* StoreCredit.swift */,
-				B5812A3829F61FD900C863B0 /* Card.swift */,
-				B5812A3A29F620BC00C863B0 /* CardSet.swift */,
 				B5812A3C29F6250C00C863B0 /* Tournament.swift */,
 				B5812A3E29F6268C00C863B0 /* TMUser.swift */,
 				B5812A4029F6276100C863B0 /* Transaction.swift */,
 				B5812A4429F62B9200C863B0 /* Match.swift */,
 				B5F7610F29F75FD400AAF264 /* EditProfilePage.swift */,
-				B5F7611129F7636100AAF264 /* FSCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,14 +298,14 @@
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B5F7610E29F75DDD00AAF264 /* User Profile */,
-				B5812A4629F62BB600C863B0 /* Tournament */,
+				B537CBB629EFB919008E70CC /* CardCollectionView */,
+				B537CBBC29EFC783008E70CC /* CardListModificationView */,
 				B5812A3129F60AA500C863B0 /* Edit Profile */,
 				B582AC9929F4DB14006F8409 /* Login */,
-				B582AC9629F4D8E2006F8409 /* Sign up */,
-				B537CBBC29EFC783008E70CC /* CardListModificationView */,
 				B537CBBB29EFBDAA008E70CC /* Search */,
-				B537CBB629EFB919008E70CC /* CardCollectionView */,
+				B582AC9629F4D8E2006F8409 /* Sign up */,
+				B5812A4629F62BB600C863B0 /* Tournament */,
+				B5F7610E29F75DDD00AAF264 /* User Profile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -470,6 +466,18 @@
 			children = (
 			);
 			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		B5F7611329F765E300AAF264 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				B537CB9B29EF598B008E70CC /* BasicCard.swift */,
+				B5812A3829F61FD900C863B0 /* Card.swift */,
+				B5812A3A29F620BC00C863B0 /* CardSet.swift */,
+				B537CBAA29EF9C48008E70CC /* YGOCard.swift */,
+				B5F7611129F7636100AAF264 /* FSCard.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
