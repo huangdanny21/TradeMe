@@ -13,6 +13,7 @@ struct TournamentSignUpView: View {
     @State private var name = ""
     @State private var email = ""
     @State private var phoneNumber = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -40,8 +41,8 @@ struct TournamentSignUpView: View {
                         let db = Firestore.firestore()
                         db.collection("tournaments").document(tournament.id!).setData(updatedTournament.toDict())
                         
-                        // Navigate back to tournament detail screen
-                        // ...
+                        // Dismiss the Sign Up view and navigate back to tournament detail screen
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                     .disabled(!formIsValid())
                 }

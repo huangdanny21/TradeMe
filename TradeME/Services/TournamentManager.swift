@@ -43,11 +43,7 @@ class TournamentManager {
             players.removeFirst(4)
             rounds.append(round)
         }
-        do {
-            try db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
-        } catch {
-            print("Error updating tournament: \(error.localizedDescription)")
-        }
+        db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
     }
     
     // generate tournament with given players
