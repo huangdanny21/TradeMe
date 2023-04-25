@@ -31,6 +31,9 @@ struct ContentView: View {
                 NavigationLink(destination: CollectionListView(collections: [])) {
                      Text("My Collections")
                  }
+                NavigationLink(destination: TournamentListScreen()) {
+                     Text("Tournament List")
+                 }
             }
             .padding()
         }
