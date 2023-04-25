@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct CollectionList: Identifiable, Codable {
     let title: String
@@ -21,11 +22,30 @@ extension BasicCard {
     }
 }
 
-struct FSCollectionList: Codable {
+struct FSCollectionList: Codable, Identifiable {
+    var id: String?
     let title: String
     let descrpition: String
     let cards: [FSCard]
 }
+
+extension FSCollectionList {
+    func toDict() -> [String: Any] {
+        var dict: [String: Any] = [:]
+        dict["startDate"] = FieldValue.serverTimestamp()
+        dict["title"] = title
+        dict["description"] = descrpition
+        
+        var cardsDict: [[String: Any]] = []
+        for card in cards {
+            cardsDict.append(card.toFirestore())
+        }
+        dict["cards"] = cardsDict
+        
+        return dict
+    }
+}
+
 
 extension CollectionList {
     func toFirestoreOject() -> FSCollectionList {

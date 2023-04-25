@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseAuth
 
 struct CollectionListView: View {
     let firestoreService = FirestoreService.shared
 
-    @State var collections: [CollectionList]
+    @State var collections: [FSCollectionList]
     @State private var presentAlert = false
     @State private var title: String = ""
     @State private var descrption: String = ""
@@ -30,7 +32,7 @@ struct CollectionListView: View {
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Add") {
+                    Button("+") {
                         addNewCollection()
                     }
                     .alert("New List", isPresented: $presentAlert, actions: {
@@ -66,28 +68,13 @@ struct CollectionListView: View {
         presentAlert = true
     }
     
-    private func saveNewList() {
-        firestoreService.saveDocument(collectionName: FirestoreCollectionName.CardCollection.rawValue, data: collections, documentId: firestoreService.currentUser?.uid ?? "") { result in
-            switch result {
-            case .success:
-                print("Document saved successfully")
-            case .failure(let error):
-                print("Error saving document: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     private func createdNewList() {
-        let newList = CollectionList(title: title, descrption: descrption, cards: [])
+        let newList = FSCollectionList(title: title, descrpition: descrption, cards: [])
         collections.append(newList)
-        firestoreService.saveDocument(collectionName: FirestoreCollectionName.CardCollection.rawValue, data: newList.toFirestoreOject(), documentId: firestoreService.currentUser?.uid ?? "") { result in
-            switch result {
-            case .success:
-                print("Document saved successfully")
-            case .failure(let error):
-                print("Error saving document: \(error.localizedDescription)")
-            }
-        }
+        
+        let db = Firestore.firestore()
+        db.collection(FirestoreCollectionName.CardCollection.rawValue).document(Auth.auth().currentUser?.uid ?? UUID().uuidString).setData(newList.toDict())
+
         didCreateNewList = true
     }
 }

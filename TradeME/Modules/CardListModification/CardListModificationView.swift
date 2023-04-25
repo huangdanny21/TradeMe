@@ -26,7 +26,7 @@ struct CardContainer: Identifiable {
 
 struct CardListModificationView: View {
     
-    @State var list: CollectionList
+    @State var list: FSCollectionList
     @State var showingPopup = false
     
     @State var cardList: [CardContainer]
