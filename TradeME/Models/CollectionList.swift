@@ -15,15 +15,9 @@ struct CollectionList: Identifiable, Codable {
     var count = 0
 }
 
-struct FSCard: Codable {
-    let name: String
-    let tag: String
-    let rarity: String
-}
-
 extension BasicCard {
     func toFSCard() -> FSCard {
-        FSCard(name: name, tag: printTag, rarity: rarity)
+        FSCard(name: name, tag: printTag, rarity: rarity, price: priceData.data?.prices.average ?? 0)
     }
 }
 

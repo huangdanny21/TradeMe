@@ -39,10 +39,6 @@ struct CardListModificationView: View {
         return total
     }
     
-    var totalString: String {
-        total.formatted(.currency(code: "USD"))
-    }
-    
     var body: some View {
         NavigationView {
             VStack {
