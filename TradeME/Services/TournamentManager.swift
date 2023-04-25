@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -72,7 +73,7 @@ class TournamentManager {
         }
         
         // create the tournament
-        let tournament = Tournament(name: name, rounds: rounds, numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: players, started: false, ended: false)
+        let tournament = Tournament(name: name, rounds: rounds, numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: players, createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: false, ended: false)
         
         // TODO: Add the tournament to Firestore
         do {

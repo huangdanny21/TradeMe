@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class TournamentListViewModel: ObservableObject {
     @Published var tournaments = [Tournament]()
+    @Published var isCreatingTournament = false
     private var tournamentsListener: ListenerRegistration?
     private let db = Firestore.firestore()
-    @Published var isCreatingTournament = false
-
+    
     init() {
         fetchTournaments()
     }
@@ -46,15 +47,14 @@ class TournamentListViewModel: ObservableObject {
                         return nil
                     }
                     
-                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], started: started, ended: ended)
+                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: started, ended: ended)
                     return tournament
                 }
             }
     }
 
-    
     func addTournament(name: String, numberOfPlayers: Int, entryFee: Double, prizeMoney: Double, startDate: Date) {
-        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], started: false, ended: false)
+        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: false, ended: false)
         do {
             let _ = try db.collection("tournaments").addDocument(from: newTournament)
         } catch {

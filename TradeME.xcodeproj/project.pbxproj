@@ -31,6 +31,8 @@
 		B578E33C29F792550056481E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33B29F792550056481E /* Round.swift */; };
 		B578E33E29F795BB0056481E /* TournamentCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */; };
 		B578E34029F7995D0056481E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33F29F7995D0056481E /* ImagePicker.swift */; };
+		B578E34229F7A3ED0056481E /* TournamentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34129F7A3ED0056481E /* TournamentError.swift */; };
+		B578E34429F7B11D0056481E /* FirebaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34329F7B11D0056481E /* FirebaseImageView.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -40,8 +42,8 @@
 		B5812A4129F6276100C863B0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4029F6276100C863B0 /* Transaction.swift */; };
 		B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4229F62A2F00C863B0 /* TournamentManager.swift */; };
 		B5812A4529F62B9200C863B0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4429F62B9200C863B0 /* Match.swift */; };
-		B5812A4B29F62FA200C863B0 /* TournamentCreationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4A29F62FA200C863B0 /* TournamentCreationScreen.swift */; };
-		B5812A4F29F6367800C863B0 /* TournamentListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4E29F6367800C863B0 /* TournamentListScreen.swift */; };
+		B5812A4B29F62FA200C863B0 /* TournamentCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4A29F62FA200C863B0 /* TournamentCreationView.swift */; };
+		B5812A4F29F6367800C863B0 /* TournamentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A4E29F6367800C863B0 /* TournamentListView.swift */; };
 		B5812A5129F6383D00C863B0 /* TournamentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A5029F6383D00C863B0 /* TournamentListViewModel.swift */; };
 		B5812A5429F6399900C863B0 /* TournamentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A5329F6399900C863B0 /* TournamentDetailView.swift */; };
 		B582AC9129F4C527006F8409 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582AC9029F4C527006F8409 /* FireStoreService.swift */; };
@@ -133,6 +135,8 @@
 		B578E33B29F792550056481E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCreationViewModel.swift; sourceTree = "<group>"; };
 		B578E33F29F7995D0056481E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B578E34129F7A3ED0056481E /* TournamentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentError.swift; sourceTree = "<group>"; };
+		B578E34329F7B11D0056481E /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -142,8 +146,8 @@
 		B5812A4029F6276100C863B0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		B5812A4229F62A2F00C863B0 /* TournamentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentManager.swift; sourceTree = "<group>"; };
 		B5812A4429F62B9200C863B0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
-		B5812A4A29F62FA200C863B0 /* TournamentCreationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCreationScreen.swift; sourceTree = "<group>"; };
-		B5812A4E29F6367800C863B0 /* TournamentListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentListScreen.swift; sourceTree = "<group>"; };
+		B5812A4A29F62FA200C863B0 /* TournamentCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCreationView.swift; sourceTree = "<group>"; };
+		B5812A4E29F6367800C863B0 /* TournamentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentListView.swift; sourceTree = "<group>"; };
 		B5812A5029F6383D00C863B0 /* TournamentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentListViewModel.swift; sourceTree = "<group>"; };
 		B5812A5329F6399900C863B0 /* TournamentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDetailView.swift; sourceTree = "<group>"; };
 		B582AC9029F4C527006F8409 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				B537CBB129EFA23D008E70CC /* SearchResultRow.swift */,
+				B578E34329F7B11D0056481E /* FirebaseImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -415,7 +420,7 @@
 		B5812A4C29F634AA00C863B0 /* Tournament Creation */ = {
 			isa = PBXGroup;
 			children = (
-				B5812A4A29F62FA200C863B0 /* TournamentCreationScreen.swift */,
+				B5812A4A29F62FA200C863B0 /* TournamentCreationView.swift */,
 				B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */,
 			);
 			path = "Tournament Creation";
@@ -424,7 +429,7 @@
 		B5812A4D29F6352100C863B0 /* Tournament List */ = {
 			isa = PBXGroup;
 			children = (
-				B5812A4E29F6367800C863B0 /* TournamentListScreen.swift */,
+				B5812A4E29F6367800C863B0 /* TournamentListView.swift */,
 				B5812A5029F6383D00C863B0 /* TournamentListViewModel.swift */,
 			);
 			path = "Tournament List";
@@ -475,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B71C7729F0EC5000D6BFB8 /* Constants.swift */,
+				B578E34129F7A3ED0056481E /* TournamentError.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -682,7 +688,7 @@
 				B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */,
 				B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */,
 				B578E33829F781700056481E /* TournamentGenerator.swift in Sources */,
-				B5812A4F29F6367800C863B0 /* TournamentListScreen.swift in Sources */,
+				B5812A4F29F6367800C863B0 /* TournamentListView.swift in Sources */,
 				B5F7611829F7719900AAF264 /* RoundView.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
@@ -691,6 +697,7 @@
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B5812A3D29F6250C00C863B0 /* Tournament.swift in Sources */,
 				B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */,
+				B578E34229F7A3ED0056481E /* TournamentError.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* BasicCard.swift in Sources */,
 				B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */,
 				B537CBB229EFA23D008E70CC /* SearchResultRow.swift in Sources */,
@@ -707,13 +714,14 @@
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,
 				B582AC9B29F4DB1D006F8409 /* LoginView.swift in Sources */,
+				B578E34429F7B11D0056481E /* FirebaseImageView.swift in Sources */,
 				B5F7611229F7636100AAF264 /* FSCard.swift in Sources */,
 				B5812A4129F6276100C863B0 /* Transaction.swift in Sources */,
 				B5812A5129F6383D00C863B0 /* TournamentListViewModel.swift in Sources */,
 				B5F7611B29F7760300AAF264 /* TournamentSignUpView.swift in Sources */,
 				B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */,
 				B578E33E29F795BB0056481E /* TournamentCreationViewModel.swift in Sources */,
-				B5812A4B29F62FA200C863B0 /* TournamentCreationScreen.swift in Sources */,
+				B5812A4B29F62FA200C863B0 /* TournamentCreationView.swift in Sources */,
 				B5F7611629F7708200AAF264 /* TournamentBracketView.swift in Sources */,
 				B578E33C29F792550056481E /* Round.swift in Sources */,
 				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,

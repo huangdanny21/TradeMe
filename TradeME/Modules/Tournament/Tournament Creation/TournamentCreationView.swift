@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TournamentCreationView.swift
 //  TradeME
 //
 //  Created by Zhi Yong Huang on 4/23/23.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct TournamentCreationScreen: View {
+struct TournamentCreationView: View {
     
-    // view model
     @ObservedObject var viewModel: TournamentCreationViewModel
     @State private var showingImagePicker = false
 
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             List {
@@ -57,7 +58,10 @@ struct TournamentCreationScreen: View {
                  }
 
                 Section {
-                    Button(action: viewModel.createTournament) {
+                    Button(action: {
+                        viewModel.createTournament()
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         if viewModel.isSubmitting {
                             ProgressView()
                         } else {
@@ -75,13 +79,13 @@ struct TournamentCreationScreen: View {
         })
     }
     
-    func loadImage(image: UIImage?) {
+    private func loadImage(image: UIImage?) {
         viewModel.tournamentImage = image
     }
 }
 
 struct TournamentCreationScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TournamentCreationScreen(viewModel: TournamentCreationViewModel())
+        TournamentCreationView(viewModel: TournamentCreationViewModel())
     }
 }

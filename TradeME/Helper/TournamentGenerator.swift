@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class TournamentGenerator {
     static func generateTournament(for tournament: Tournament) -> Tournament {
@@ -25,5 +26,18 @@ class TournamentGenerator {
         
         tournament.rounds = rounds
         return tournament
+    }
+    
+    static func startTournament(_ tournament: Tournament, completion: @escaping (Result<Void, Error>) -> Void) {
+        let db = Firestore.firestore()
+        var updatedTournament = tournament
+        updatedTournament.started = true
+        db.collection("tournaments").document(updatedTournament.id ?? "").updateData(["started": true]) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
     }
 }

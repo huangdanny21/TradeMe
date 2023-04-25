@@ -15,28 +15,36 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if isLoggedIn {
-                    NavigationLink(destination: EditProfileView()) {
-                        Text("Edit Profile")
+            Form {
+                Section {
+                    VStack {
+                        if isLoggedIn {
+                            NavigationLink(destination: EditProfileView()) {
+                                Text("Edit Profile")
+                            }
+                        } else {
+                            NavigationLink(destination: LoginView()) {
+                                Text("Login")
+                            }
+                            NavigationLink(destination: SignUpView()) {
+                                Text("Sign Up")
+                            }
+                        }
                     }
-                } else {
-                    NavigationLink(destination: LoginView()) {
-                        Text("Login")
+                    .padding(.top, 5) // Add padding to the top
+                }
+
+                Section {
+                    NavigationLink(destination: CollectionListView(collections: [])) {
+                        Text("My Collections")
                     }
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign Up")
+                    NavigationLink(destination: TournamentListView()) {
+                        Text("Tournament List")
                     }
                 }
-                
-                NavigationLink(destination: CollectionListView(collections: [])) {
-                     Text("My Collections")
-                 }
-                NavigationLink(destination: TournamentListScreen()) {
-                     Text("Tournament List")
-                 }
             }
             .padding()
+            .navigationTitle("Home")
         }
         .onAppear {
             checkLoginStatus()

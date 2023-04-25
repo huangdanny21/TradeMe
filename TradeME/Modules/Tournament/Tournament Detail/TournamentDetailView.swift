@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseStorage
 
 struct TournamentDetailScreen: View {
     let tournament: Tournament
+    @State private var tournamentImage: UIImage? = nil
     
     var body: some View {
         VStack {
+            if let image = tournamentImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 200)
+                    .padding(.horizontal)
+            } else {
+                ProgressView()
+                    .frame(height: 200)
+            }
+            
             Text(tournament.name)
                 .font(.title)
                 .padding()
@@ -44,6 +58,27 @@ struct TournamentDetailScreen: View {
             }
             .padding()
             
+            if tournament.createdBy == Auth.auth().currentUser?.uid {
+                VStack {
+                    Text("Note: As an admin, you can start the tournament automatically when the start time is reached, or manually by pressing the button below.")
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Button(action: startTournament) {
+                        Text("Start Tournament")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(5)
+                            .padding(.horizontal, 20)
+                    }
+                    .padding(.vertical)
+                }
+            }
+
+            
             NavigationLink(destination: TournamentSignUpView(tournament: tournament)) {
                 Text("Sign Up")
                     .fontWeight(.bold)
@@ -58,6 +93,26 @@ struct TournamentDetailScreen: View {
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            // Load the tournament image from Firestore storage
+            if let imageUrl = tournament.imageUrl {
+                let storage = Storage.storage()
+                let storageRef = storage.reference()
+                let imagesRef = storageRef.child(imageUrl)
+                
+                imagesRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                    } else {
+                        tournamentImage = UIImage(data: data!)
+                    }
+                  }
+            }
+        }
+    }
+    
+    func startTournament() {
+        // Code to start the tournament
     }
 }
 

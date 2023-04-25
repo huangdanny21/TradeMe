@@ -1,5 +1,5 @@
 //
-//  TournamentListScreen.swift
+//  TournamentListView.swift
 //  TradeME
 //
 //  Created by Zhi Yong Huang on 4/23/23.
@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseFirestore
 import PopupView
 
-struct TournamentListScreen: View {
+struct TournamentListView: View {
     @StateObject private var viewModel = TournamentListViewModel()
     @State private var isPresentingTournamentCreation = false
     
@@ -28,7 +28,7 @@ struct TournamentListScreen: View {
             })
             .sheet(isPresented: $isPresentingTournamentCreation) {
                 NavigationView {
-                    TournamentCreationScreen(viewModel: TournamentCreationViewModel())
+                    TournamentCreationView(viewModel: TournamentCreationViewModel())
                         .navigationBarTitle("New Tournament")
                         .navigationBarItems(trailing: Button(action: {
                             isPresentingTournamentCreation = false
@@ -44,9 +44,8 @@ struct TournamentListScreen: View {
     }
 }
 
-
 struct TournamentListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TournamentListScreen()
+        TournamentListView()
     }
 }

@@ -8,7 +8,8 @@
 import FirebaseFirestore
 import SwiftUI
 import FirebaseStorage
-// ViewModel for the TournamentCreationScreen
+import FirebaseAuth
+
 class TournamentCreationViewModel: ObservableObject {
     
     // properties to hold tournament details
@@ -50,7 +51,7 @@ class TournamentCreationViewModel: ObservableObject {
         let combinedStartDateAndTime = combineDateAndTime(date: tournamentStartDate, time: tournamentStartTime)
         
         // create the tournament object
-        let tournament = Tournament(name: tournamentName, rounds: [], numberOfPlayers: numPlayers, entryFee: fee, prizeMoney: prize, startDate: combinedStartDateAndTime ?? Date(), players: [], started: false, ended: false)
+        let tournament = Tournament(name: tournamentName, rounds: [], numberOfPlayers: numPlayers, entryFee: fee, prizeMoney: prize, startDate: combinedStartDateAndTime ?? Date(), players: [], createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: false, ended: false)
         
         // submit the tournament to firestore
         isSubmitting = true
@@ -70,6 +71,7 @@ class TournamentCreationViewModel: ObservableObject {
             let storageRef = self.storage.reference().child("tournaments/\(tournament.name).jpg")
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
+            
             let uploadTask = storageRef.putData(imageData, metadata: metadata) { (metadata, error) in
                 if let error = error {
                     print("Error uploading tournament image: \(error.localizedDescription)")
