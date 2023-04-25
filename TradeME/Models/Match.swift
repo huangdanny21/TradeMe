@@ -14,5 +14,14 @@ struct Match: Codable, Identifiable {
     var result: String? // or another type to represent the match result
     var winner: Player? // add a winner property to the match
     var roundNumber: Int
+    
+    func toDict() -> [String: Any] {
+        return [
+            "player1": player1.toDict(),
+            "player2": player2.toDict(),
+            "result": result ?? "",
+            "winner": winner?.toDict() ?? [:],
+            "roundNumber": roundNumber
+        ]
+    }
 }
-

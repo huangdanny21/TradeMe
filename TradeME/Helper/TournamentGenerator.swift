@@ -21,7 +21,7 @@ class TournamentGenerator {
             roundMatches.append(match)
         }
         
-        rounds.append(Round(number: 1, date: tournament.startDate, matches: roundMatches, players: shuffledPlayers))
+        rounds.append(Round(number: 1, date: tournament.startDate, matches: roundMatches, players: shuffledPlayers, inProgress: true))
         
         tournament.rounds = rounds
         return tournament

@@ -39,7 +39,7 @@ class TournamentManager {
         players.shuffle()
         var rounds: [Round] = []
         for i in 1...4 {
-            let round = Round(number: i, date: Date(), matches: generateMatches(for: players, roundNumber: i), players: players)
+            let round = Round(number: i, date: Date(), matches: generateMatches(for: players, roundNumber: i), players: players, inProgress: false)
             players.removeFirst(4)
             rounds.append(round)
         }
@@ -67,12 +67,12 @@ class TournamentManager {
         let numberOfRounds = Int(log2(Double(players.count)))
         for i in 1...numberOfRounds {
             let roundMatches = generateMatches(for: players, roundNumber: i)
-            let round = Round(number: i, date: startDate, matches: roundMatches, players: players)
+            let round = Round(number: i, date: startDate, matches: roundMatches, players: players, inProgress: true)
             rounds.append(round)
         }
         
         // create the tournament
-        let tournament = Tournament(name: name, rounds: rounds, numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: players)
+        let tournament = Tournament(name: name, rounds: rounds, numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: players, started: false, ended: false)
         
         // TODO: Add the tournament to Firestore
         do {

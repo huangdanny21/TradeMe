@@ -22,9 +22,3 @@ struct TournamentBracketView: View {
         .navigationBarTitle(tournament.name)
     }
 }
-
-struct TournamentBracketView_Previews: PreviewProvider {
-    static var previews: some View {
-        TournamentBracketView(tournament: Tournament(name: "Test1", rounds: [], numberOfPlayers: 64, entryFee: 5, prizeMoney: 50, startDate: Date(), players: []))
-    }
-}

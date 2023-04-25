@@ -39,12 +39,14 @@ class TournamentListViewModel: ObservableObject {
                           let entryFee = data["entryFee"] as? Double,
                           let prizeMoney = data["prizeMoney"] as? Double,
                           let startDateString = data["startDate"] as? String,
+                          let started = data["started"] as? Bool,
+                          let ended = data["ended"] as? Bool,
                           let startDate = dateFormatter.date(from: startDateString) else {
                         print("Error parsing tournament data")
                         return nil
                     }
                     
-                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [])
+                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], started: started, ended: ended)
                     return tournament
                 }
             }
@@ -52,7 +54,7 @@ class TournamentListViewModel: ObservableObject {
 
     
     func addTournament(name: String, numberOfPlayers: Int, entryFee: Double, prizeMoney: Double, startDate: Date) {
-        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [])
+        let newTournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], started: false, ended: false)
         do {
             let _ = try db.collection("tournaments").addDocument(from: newTournament)
         } catch {

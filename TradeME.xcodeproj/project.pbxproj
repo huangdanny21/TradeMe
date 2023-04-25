@@ -28,6 +28,7 @@
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
 		B578E33829F781700056481E /* TournamentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33729F781700056481E /* TournamentGenerator.swift */; };
 		B578E33A29F781CB0056481E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33929F781CB0056481E /* Double+Extension.swift */; };
+		B578E33C29F792550056481E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33B29F792550056481E /* Round.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -127,6 +128,7 @@
 		B537CBBD29EFC856008E70CC /* CardListModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModificationView.swift; sourceTree = "<group>"; };
 		B578E33729F781700056481E /* TournamentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGenerator.swift; sourceTree = "<group>"; };
 		B578E33929F781CB0056481E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B578E33B29F792550056481E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B5812A4029F6276100C863B0 /* Transaction.swift */,
 				B5812A4429F62B9200C863B0 /* Match.swift */,
 				B5F7611C29F77B9200AAF264 /* Player.swift */,
+				B578E33B29F792550056481E /* Round.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */,
 				B5812A4B29F62FA200C863B0 /* TournamentCreationScreen.swift in Sources */,
 				B5F7611629F7708200AAF264 /* TournamentBracketView.swift in Sources */,
+				B578E33C29F792550056481E /* Round.swift in Sources */,
 				B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
