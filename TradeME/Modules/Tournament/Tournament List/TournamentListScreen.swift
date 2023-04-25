@@ -11,8 +11,8 @@ import PopupView
 
 struct TournamentListScreen: View {
     @StateObject private var viewModel = TournamentListViewModel()
-    @State var showingPopup = false
-
+    @State private var isPresentingTournamentCreation = false
+    
     var body: some View {
         NavigationView {
             List(viewModel.tournaments) { tournament in
@@ -22,30 +22,28 @@ struct TournamentListScreen: View {
             }
             .navigationBarTitle("Tournaments")
             .navigationBarItems(trailing: Button(action: {
-                viewModel.isCreatingTournament = true
+                isPresentingTournamentCreation = true
             }) {
                 Image(systemName: "plus")
             })
-            .sheet(isPresented: $viewModel.isCreatingTournament) {
-                TournamentCreationScreen()
+            .sheet(isPresented: $isPresentingTournamentCreation) {
+                NavigationView {
+                    TournamentCreationScreen(viewModel: TournamentCreationViewModel())
+                        .navigationBarTitle("New Tournament")
+                        .navigationBarItems(trailing: Button(action: {
+                            isPresentingTournamentCreation = false
+                        }) {
+                            Text("Done")
+                        })
+                }
             }
         }
         .onAppear {
             viewModel.fetchTournaments()
         }
-        .popup(isPresented: $showingPopup) {
-            TournamentCreationScreen()
-        } customize: {
-            $0
-                .type(.floater())
-                .position(.top)
-                .position(.bottom)
-                .closeOnTap(false)
-                .dragToDismiss(true)
-            
-        }
     }
 }
+
 
 struct TournamentListScreen_Previews: PreviewProvider {
     static var previews: some View {

@@ -29,8 +29,6 @@ struct StoreCredit: Codable {
     
     // Returns a dictionary representation of the StoreCredit object, for saving to Firestore
     func toDict() -> [String: Any] {
-        return [
-            "balance": balance
-        ]
+        ["balance": balance]
     }
 }

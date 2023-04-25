@@ -17,11 +17,9 @@ struct FSCard: Codable, Identifiable {
     
     
     func toFirestore() -> [String: Any] {
-        return [
-            "name": name,
-            "tag": tag,
-            "rarity": rarity,
-            "price": price
-        ]
+         ["name": name,
+          "tag": tag,
+          "rarity": rarity,
+          "price": price]
     }
 }

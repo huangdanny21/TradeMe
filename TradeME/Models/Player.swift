@@ -15,6 +15,8 @@ struct Player: Codable, Identifiable {
     
     // convert the player object to a dictionary
     func toDict() -> [String: Any] {
-        return [            "name": name,            "email": email,            "phoneNumber": phoneNumber        ]
+        ["name": name,
+        "email": email,
+        "phoneNumber": phoneNumber]
     }
 }

@@ -29,6 +29,7 @@
 		B578E33829F781700056481E /* TournamentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33729F781700056481E /* TournamentGenerator.swift */; };
 		B578E33A29F781CB0056481E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33929F781CB0056481E /* Double+Extension.swift */; };
 		B578E33C29F792550056481E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33B29F792550056481E /* Round.swift */; };
+		B578E33E29F795BB0056481E /* TournamentCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -129,6 +130,7 @@
 		B578E33729F781700056481E /* TournamentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGenerator.swift; sourceTree = "<group>"; };
 		B578E33929F781CB0056481E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B578E33B29F792550056481E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCreationViewModel.swift; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				B5812A4A29F62FA200C863B0 /* TournamentCreationScreen.swift */,
+				B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */,
 			);
 			path = "Tournament Creation";
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				B5812A5129F6383D00C863B0 /* TournamentListViewModel.swift in Sources */,
 				B5F7611B29F7760300AAF264 /* TournamentSignUpView.swift in Sources */,
 				B582AC9829F4D8EE006F8409 /* SignUpView.swift in Sources */,
+				B578E33E29F795BB0056481E /* TournamentCreationViewModel.swift in Sources */,
 				B5812A4B29F62FA200C863B0 /* TournamentCreationScreen.swift in Sources */,
 				B5F7611629F7708200AAF264 /* TournamentBracketView.swift in Sources */,
 				B578E33C29F792550056481E /* Round.swift in Sources */,

@@ -16,12 +16,11 @@ struct Match: Codable, Identifiable {
     var roundNumber: Int
     
     func toDict() -> [String: Any] {
-        return [
-            "player1": player1.toDict(),
-            "player2": player2.toDict(),
-            "result": result ?? "",
-            "winner": winner?.toDict() ?? [:],
-            "roundNumber": roundNumber
+        ["player1": player1.toDict(),
+         "player2": player2.toDict(),
+         "result": result ?? "",
+         "winner": winner?.toDict() ?? [:],
+         "roundNumber": roundNumber
         ]
     }
 }
