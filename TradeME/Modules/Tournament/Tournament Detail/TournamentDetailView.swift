@@ -14,7 +14,7 @@ struct TournamentDetailScreen: View {
     @State private var tournamentImage: UIImage? = nil
     
     var body: some View {
-        VStack {
+        List {
             if let image = tournamentImage {
                 Image(uiImage: image)
                     .resizable()
@@ -36,6 +36,17 @@ struct TournamentDetailScreen: View {
                 Text("\(tournament.numberOfPlayers)")
             }
             .padding()
+            
+            HStack {
+                NavigationLink(destination: PlayerListView(tournament: tournament)) {
+                    Text("Players signed up:")
+                        .foregroundColor(.blue) // Set text color
+                }
+                Spacer()
+                Text("\(tournament.players.count)")
+            }
+            .padding()
+
             
             HStack {
                 Text("Entry Fee:")
@@ -112,7 +123,14 @@ struct TournamentDetailScreen: View {
     }
     
     func startTournament() {
-        // Code to start the tournament
+        TournamentGenerator.startTournament(tournament) { result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

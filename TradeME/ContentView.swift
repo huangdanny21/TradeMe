@@ -10,41 +10,49 @@ import Firebase
 
 struct ContentView: View {
     @State private var isLoggedIn = false
-
     @State var currentText = ""
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    VStack {
-                        if isLoggedIn {
-                            NavigationLink(destination: EditProfileView()) {
-                                Text("Edit Profile")
-                            }
-                        } else {
-                            NavigationLink(destination: LoginView()) {
-                                Text("Login")
-                            }
-                            NavigationLink(destination: SignUpView()) {
-                                Text("Sign Up")
-                            }
-                        }
-                    }
-                    .padding(.top, 5) // Add padding to the top
+        TabView {
+            CollectionListView(collections: [])
+                .tabItem {
+                    Image(systemName: "rectangle.stack")
+                    Text("Collection")
                 }
-
-                Section {
-                    NavigationLink(destination: CollectionListView(collections: [])) {
-                        Text("My Collections")
-                    }
-                    NavigationLink(destination: TournamentListView()) {
-                        Text("Tournament List")
-                    }
-                }
+            
+            CardSearchView(addCard: { model in
+                
+            })
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
             }
-            .padding()
-            .navigationTitle("Home")
+            
+            TournamentListView()
+                .tabItem {
+                    Image(systemName: "trophy")
+                    Text("Tournament")
+                }
+            
+            MessageView()
+                .tabItem {
+                    Image(systemName: "message")
+                    Text("Message")
+                }
+            
+            if isLoggedIn {
+                EditProfileView()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+            } else {
+                LoginView()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Login")
+                    }
+            }
         }
         .onAppear {
             checkLoginStatus()
@@ -63,6 +71,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

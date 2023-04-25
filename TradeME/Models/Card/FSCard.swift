@@ -15,7 +15,6 @@ struct FSCard: Codable, Identifiable {
     let rarity: String
     let price: Double
     
-    
     func toFirestore() -> [String: Any] {
          ["name": name,
           "tag": tag,

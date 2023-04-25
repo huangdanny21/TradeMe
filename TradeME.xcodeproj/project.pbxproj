@@ -33,6 +33,9 @@
 		B578E34029F7995D0056481E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33F29F7995D0056481E /* ImagePicker.swift */; };
 		B578E34229F7A3ED0056481E /* TournamentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34129F7A3ED0056481E /* TournamentError.swift */; };
 		B578E34429F7B11D0056481E /* FirebaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34329F7B11D0056481E /* FirebaseImageView.swift */; };
+		B578E34629F7BD360056481E /* YGOCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34529F7BD360056481E /* YGOCardType.swift */; };
+		B578E34929F85B940056481E /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34829F85B940056481E /* PlayerListView.swift */; };
+		B578E34C29F85F090056481E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E34B29F85F090056481E /* MessageView.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -137,6 +140,9 @@
 		B578E33F29F7995D0056481E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B578E34129F7A3ED0056481E /* TournamentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentError.swift; sourceTree = "<group>"; };
 		B578E34329F7B11D0056481E /* FirebaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageView.swift; sourceTree = "<group>"; };
+		B578E34529F7BD360056481E /* YGOCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YGOCardType.swift; sourceTree = "<group>"; };
+		B578E34829F85B940056481E /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
+		B578E34B29F85F090056481E /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -314,8 +320,9 @@
 		B537CBA229EF888D008E70CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B537CBB629EFB919008E70CC /* CardCollectionView */,
-				B537CBBC29EFC783008E70CC /* CardListModificationView */,
+				B578E34A29F85EA00056481E /* Message */,
+				B537CBB629EFB919008E70CC /* CardCollection */,
+				B537CBBC29EFC783008E70CC /* CardListModification */,
 				B5812A3129F60AA500C863B0 /* Edit Profile */,
 				B582AC9929F4DB14006F8409 /* Login */,
 				B537CBBB29EFBDAA008E70CC /* Search */,
@@ -363,12 +370,12 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		B537CBB629EFB919008E70CC /* CardCollectionView */ = {
+		B537CBB629EFB919008E70CC /* CardCollection */ = {
 			isa = PBXGroup;
 			children = (
 				B537CBB729EFBA00008E70CC /* CollectionListView.swift */,
 			);
-			path = CardCollectionView;
+			path = CardCollection;
 			sourceTree = "<group>";
 		};
 		B537CBBB29EFBDAA008E70CC /* Search */ = {
@@ -379,13 +386,29 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		B537CBBC29EFC783008E70CC /* CardListModificationView */ = {
+		B537CBBC29EFC783008E70CC /* CardListModification */ = {
 			isa = PBXGroup;
 			children = (
 				B537CBBD29EFC856008E70CC /* CardListModificationView.swift */,
 				B526083529F4FAF700390B19 /* CardModificationView.swift */,
 			);
-			path = CardListModificationView;
+			path = CardListModification;
+			sourceTree = "<group>";
+		};
+		B578E34729F85B440056481E /* Player List */ = {
+			isa = PBXGroup;
+			children = (
+				B578E34829F85B940056481E /* PlayerListView.swift */,
+			);
+			path = "Player List";
+			sourceTree = "<group>";
+		};
+		B578E34A29F85EA00056481E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				B578E34B29F85F090056481E /* MessageView.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		B5812A3129F60AA500C863B0 /* Edit Profile */ = {
@@ -399,6 +422,7 @@
 		B5812A4629F62BB600C863B0 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				B578E34729F85B440056481E /* Player List */,
 				B5F7611929F775F100AAF264 /* Sign Up */,
 				B5812A5229F6398900C863B0 /* Tournament Detail */,
 				B5812A4D29F6352100C863B0 /* Tournament List */,
@@ -481,6 +505,7 @@
 			children = (
 				B5B71C7729F0EC5000D6BFB8 /* Constants.swift */,
 				B578E34129F7A3ED0056481E /* TournamentError.swift */,
+				B578E34529F7BD360056481E /* YGOCardType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -683,6 +708,7 @@
 				B5B71C7829F0EC5000D6BFB8 /* Constants.swift in Sources */,
 				B5812A3929F61FD900C863B0 /* Card.swift in Sources */,
 				B537CBB529EFA80D008E70CC /* URLMaker.swift in Sources */,
+				B578E34629F7BD360056481E /* YGOCardType.swift in Sources */,
 				B537CB9F29EF6924008E70CC /* CardFetchService.swift in Sources */,
 				B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */,
 				B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */,
@@ -690,6 +716,7 @@
 				B578E33829F781700056481E /* TournamentGenerator.swift in Sources */,
 				B5812A4F29F6367800C863B0 /* TournamentListView.swift in Sources */,
 				B5F7611829F7719900AAF264 /* RoundView.swift in Sources */,
+				B578E34C29F85F090056481E /* MessageView.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
 				B537CBAB29EF9C48008E70CC /* YGOCard.swift in Sources */,
 				B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */,
@@ -697,6 +724,7 @@
 				B537CB9929EF55E2008E70CC /* API.swift in Sources */,
 				B5812A3D29F6250C00C863B0 /* Tournament.swift in Sources */,
 				B5812A3B29F620BC00C863B0 /* CardSet.swift in Sources */,
+				B578E34929F85B940056481E /* PlayerListView.swift in Sources */,
 				B578E34229F7A3ED0056481E /* TournamentError.swift in Sources */,
 				B537CB9C29EF598B008E70CC /* BasicCard.swift in Sources */,
 				B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */,
