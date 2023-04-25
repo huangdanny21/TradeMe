@@ -94,6 +94,7 @@ struct TournamentCreationScreen: View {
             isSubmitting = false
         }
     }
+
     
     // function to combine a date and time into a single date object
     func combineDateAndTime(date: Date, time: Date) -> Date? {
