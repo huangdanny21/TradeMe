@@ -33,8 +33,8 @@ struct ContentView: View {
                     Image(systemName: "trophy")
                     Text("Tournament")
                 }
-            
-            MessageView()
+
+            MessageListView(viewModel: MessageListViewModel(currentUserID: Auth.auth().currentUser?.uid), recipientId: "")
                 .tabItem {
                     Image(systemName: "message")
                     Text("Message")
