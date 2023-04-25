@@ -30,6 +30,7 @@
 		B578E33A29F781CB0056481E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33929F781CB0056481E /* Double+Extension.swift */; };
 		B578E33C29F792550056481E /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33B29F792550056481E /* Round.swift */; };
 		B578E33E29F795BB0056481E /* TournamentCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */; };
+		B578E34029F7995D0056481E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33F29F7995D0056481E /* ImagePicker.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -131,6 +132,7 @@
 		B578E33929F781CB0056481E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B578E33B29F792550056481E /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		B578E33D29F795BB0056481E /* TournamentCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentCreationViewModel.swift; sourceTree = "<group>"; };
+		B578E33F29F7995D0056481E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				B537CBB429EFA80D008E70CC /* URLMaker.swift */,
 				B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */,
 				B578E33729F781700056481E /* TournamentGenerator.swift */,
+				B578E33F29F7995D0056481E /* ImagePicker.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				B5812A4529F62B9200C863B0 /* Match.swift in Sources */,
 				B5F7611D29F77B9200AAF264 /* Player.swift in Sources */,
 				B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */,
+				B578E34029F7995D0056481E /* ImagePicker.swift in Sources */,
 				B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */,
 				B537CBA929EF900A008E70CC /* HiddenNavigationBar.swift in Sources */,
 				B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */,

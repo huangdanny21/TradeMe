@@ -6,7 +6,8 @@
 //
 
 import FirebaseFirestore
-
+import SwiftUI
+import FirebaseStorage
 // ViewModel for the TournamentCreationScreen
 class TournamentCreationViewModel: ObservableObject {
     
@@ -17,6 +18,7 @@ class TournamentCreationViewModel: ObservableObject {
     @Published var prizeMoney = ""
     @Published var tournamentStartDate = Date()
     @Published var tournamentStartTime = Date()
+    @Published var tournamentImage: UIImage?
     
     // state to handle form validation and submission
     @Published var showValidationAlert = false
@@ -25,6 +27,9 @@ class TournamentCreationViewModel: ObservableObject {
     
     // reference to firestore
     private let db = Firestore.firestore()
+    
+    // reference to firebase storage
+    private let storage = Storage.storage()
     
     // function to create a new tournament
     func createTournament() {
@@ -52,10 +57,32 @@ class TournamentCreationViewModel: ObservableObject {
         db.collection("tournaments").addDocument(data: tournament.toDict()) { error in
             if let error = error {
                 print("Error adding tournament: \(error.localizedDescription)")
-            } else {
-                print("Tournament added successfully!")
+                self.isSubmitting = false
+                return
             }
-            self.isSubmitting = false
+            
+            guard let image = self.tournamentImage, let imageData = image.jpegData(compressionQuality: 0.5) else {
+                self.isSubmitting = false
+                return
+            }
+            
+            // upload the image to Firebase Storage
+            let storageRef = self.storage.reference().child("tournaments/\(tournament.name).jpg")
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            let uploadTask = storageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading tournament image: \(error.localizedDescription)")
+                } else {
+                    print("Tournament image uploaded successfully!")
+                }
+                self.isSubmitting = false
+            }
+            
+            uploadTask.observe(.progress) { snapshot in
+                let percentComplete = Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+                print("Tournament image upload progress: \(percentComplete)")
+            }
         }
     }
     
