@@ -17,11 +17,11 @@ struct RoundView: View {
             
             ForEach(round.matches) { match in
                 HStack {
-                    Text(match.player1)
+                    Text(match.player1.name)
                     Spacer()
                     Text(match.result ?? "-")
                     Spacer()
-                    Text(match.player2)
+                    Text(match.player2.name)
                 }
             }
         }

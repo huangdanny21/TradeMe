@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct Match: Codable, Hashable, Identifiable {
+struct Match: Codable, Identifiable {
     var id: String?
-    var player1: String
-    var player2: String
+    var player1: Player
+    var player2: Player
     var result: String? // or another type to represent the match result
+    var winner: Player? // add a winner property to the match
+    var roundNumber: Int
 }
+

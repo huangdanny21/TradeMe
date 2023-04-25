@@ -49,5 +49,5 @@ struct Round: Codable, Identifiable {
     var number: Int
     var date: Date
     var matches: [Match]
-    var players: [String] // UserId
+    var players: [Player] // UserId
 }

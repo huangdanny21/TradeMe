@@ -9,8 +9,8 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
-class TournamentManager: ObservableObject {
+class TournamentManager {
+    static let shared = TournamentManager()
     let db = Firestore.firestore()
     @Published var tournaments: [Tournament] = []
     
@@ -33,36 +33,84 @@ class TournamentManager: ObservableObject {
             }
         }
     }
-    
-    func signUp(player: String, tournament: Tournament) {
-        guard var round = tournament.rounds.first(where: { $0.players.count < 4 }) else {
-            print("Error signing up player: tournament full")
-            return
+
+    func announceRounds(for tournament: Tournament) {
+        var players = tournament.rounds.flatMap { $0.players }
+        players.shuffle()
+        var rounds: [Round] = []
+        for i in 1...4 {
+            let round = Round(number: i, date: Date(), matches: generateMatches(for: players, roundNumber: i), players: players)
+            players.removeFirst(4)
+            rounds.append(round)
         }
-        if !round.players.contains(player) {
-            round.players.append(player)
-            do {
-                let roundIndex = tournament.rounds.firstIndex(where: { $0.id == round.id })!
-                try db.collection("tournaments").document(tournament.id!).updateData(["rounds.\(roundIndex)": round])
-            } catch {
-                print("Error updating tournament: \(error.localizedDescription)")
-            }
+        do {
+            try db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
+        } catch {
+            print("Error updating tournament: \(error.localizedDescription)")
         }
     }
     
-    func announceRounds(for tournament: Tournament) {
-//        var players = tournament.rounds.flatMap { $0.players }
-//        players.shuffle()
-//        var rounds: [Round] = []
-//        for i in 1...4 {
-//            let round = Round(number: i, date: Date(), players: Array(players.prefix(4)), m)
-//            players.removeFirst(4)
-//            rounds.append(round)
-//        }
-//        do {
-//            try db.collection("tournaments").document(tournament.id!).updateData(["rounds": rounds])
-//        } catch {
-//            print("Error updating tournament: \(error.localizedDescription)")
-//        }
+    // generate tournament with given players
+    func generateTournament(with players: [Player], name: String, numberOfPlayers: Int, entryFee: Double, prizeMoney: Double, startDate: Date) -> Tournament {
+        var players = players
+        let numOfByes = getNextPowerOfTwo(numberOfPlayers) - numberOfPlayers
+        
+        // add byes if necessary
+        if numOfByes > 0 {
+            let byePlayer = Player(name: "BYE", email: "", phoneNumber: "")
+            for _ in 0..<numOfByes {
+                players.append(byePlayer)
+            }
+        }
+        
+        // shuffle the players
+        players.shuffle()
+        
+        // create rounds
+        var rounds = [Round]()
+        let numberOfRounds = Int(log2(Double(players.count)))
+        for i in 1...numberOfRounds {
+            let roundMatches = generateMatches(for: players, roundNumber: i)
+            let round = Round(number: i, date: startDate, matches: roundMatches, players: players)
+            rounds.append(round)
+        }
+        
+        // create the tournament
+        let tournament = Tournament(name: name, rounds: rounds, numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: players)
+        
+        // TODO: Add the tournament to Firestore
+        do {
+            let documentRef = try db.collection("tournaments").addDocument(from: tournament)
+            var tournament = tournament
+            tournament.id = documentRef.documentID
+            return tournament
+        } catch {
+            print("Error adding document: \(error)")
+            return tournament
+        }
+    }
+    
+    // generate matches for a round
+    private func generateMatches(for players: [Player], roundNumber: Int) -> [Match] {
+        var matches = [Match]()
+        let numberOfMatches = players.count / 2
+        
+        for i in 0..<numberOfMatches {
+            let player1 = players[i]
+            let player2 = players[players.count - 1 - i]
+            let match = Match(player1: player1, player2: player2, roundNumber: roundNumber)
+            matches.append(match)
+        }
+        
+        return matches
+    }
+    
+    // get the next power of two
+    private func getNextPowerOfTwo(_ number: Int) -> Int {
+        var power = 1
+        while power < number {
+            power *= 2
+        }
+        return power
     }
 }

@@ -26,6 +26,8 @@
 		B537CBB829EFBA00008E70CC /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB729EFBA00008E70CC /* CollectionListView.swift */; };
 		B537CBBA29EFBC44008E70CC /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBB929EFBC44008E70CC /* CollectionList.swift */; };
 		B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CBBD29EFC856008E70CC /* CardListModificationView.swift */; };
+		B578E33829F781700056481E /* TournamentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33729F781700056481E /* TournamentGenerator.swift */; };
+		B578E33A29F781CB0056481E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578E33929F781CB0056481E /* Double+Extension.swift */; };
 		B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3229F60C9C00C863B0 /* EditProfileView.swift */; };
 		B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3429F619E700C863B0 /* StoreCredit.swift */; };
 		B5812A3729F61CA500C863B0 /* StoreCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5812A3629F61CA500C863B0 /* StoreCreditService.swift */; };
@@ -123,6 +125,8 @@
 		B537CBB729EFBA00008E70CC /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		B537CBB929EFBC44008E70CC /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
 		B537CBBD29EFC856008E70CC /* CardListModificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListModificationView.swift; sourceTree = "<group>"; };
+		B578E33729F781700056481E /* TournamentGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentGenerator.swift; sourceTree = "<group>"; };
+		B578E33929F781CB0056481E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B5812A3229F60C9C00C863B0 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		B5812A3429F619E700C863B0 /* StoreCredit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredit.swift; sourceTree = "<group>"; };
 		B5812A3629F61CA500C863B0 /* StoreCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCreditService.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 				B5B71C7629F0EC4500D6BFB8 /* Enum */,
 				B537CBB429EFA80D008E70CC /* URLMaker.swift */,
 				B5B71C7229F0E99C00D6BFB8 /* PropertyListSavable.swift */,
+				B578E33729F781700056481E /* TournamentGenerator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */,
+				B578E33929F781CB0056481E /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				B5812A3529F619E700C863B0 /* StoreCredit.swift in Sources */,
 				B5812A4329F62A2F00C863B0 /* TournamentManager.swift in Sources */,
 				B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */,
+				B578E33829F781700056481E /* TournamentGenerator.swift in Sources */,
 				B5812A4F29F6367800C863B0 /* TournamentListScreen.swift in Sources */,
 				B5F7611829F7719900AAF264 /* RoundView.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,
@@ -680,6 +687,7 @@
 				B537CBB229EFA23D008E70CC /* SearchResultRow.swift in Sources */,
 				B537CBA429EF88AA008E70CC /* CardSearchView.swift in Sources */,
 				B537CBBE29EFC856008E70CC /* CardListModificationView.swift in Sources */,
+				B578E33A29F781CB0056481E /* Double+Extension.swift in Sources */,
 				B5812A3329F60C9C00C863B0 /* EditProfileView.swift in Sources */,
 				B5812A5429F6399900C863B0 /* TournamentDetailView.swift in Sources */,
 				B5812A4529F62B9200C863B0 /* Match.swift in Sources */,
