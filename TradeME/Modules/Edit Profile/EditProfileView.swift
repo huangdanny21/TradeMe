@@ -97,6 +97,7 @@ struct EditProfileView: View {
                 print("User updated successfully!")
             }
         }
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

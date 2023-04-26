@@ -47,7 +47,7 @@ class TournamentListViewModel: ObservableObject {
                         return nil
                     }
                     
-                    let tournament = Tournament(id: id, name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: started, ended: ended)
+                    let tournament = Tournament(name: name, rounds: [], numberOfPlayers: numberOfPlayers, entryFee: entryFee, prizeMoney: prizeMoney, startDate: startDate, players: [], createdBy: Auth.auth().currentUser?.uid ?? UUID().uuidString, started: started, ended: ended)
                     return tournament
                 }
             }

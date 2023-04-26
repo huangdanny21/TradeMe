@@ -8,7 +8,7 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Tournament: Codable, Identifiable {
+class Tournament: Codable, Identifiable {
     @DocumentID var id: String?
     var name: String
     var rounds: [Round]
@@ -22,6 +22,30 @@ struct Tournament: Codable, Identifiable {
     var ended: Bool
     var imageUrl: String? {
         "tournaments/\(name).jpg"
+    }
+    
+    init(name: String,
+         rounds: [Round] = [],
+         numberOfPlayers: Int,
+         entryFee: Double,
+         prizeMoney: Double,
+         startDate: Date,
+         players: [Player] = [],
+         createdBy: String,
+         started: Bool = false,
+         ended: Bool = false,
+         imageUrl: String? = nil) {
+        
+        self.name = name
+        self.rounds = rounds
+        self.numberOfPlayers = numberOfPlayers
+        self.entryFee = entryFee
+        self.prizeMoney = prizeMoney
+        self.startDate = startDate
+        self.players = players
+        self.createdBy = createdBy
+        self.started = started
+        self.ended = ended
     }
     
     // convert the tournament object to a dictionary
@@ -49,7 +73,8 @@ struct Tournament: Codable, Identifiable {
     }
     
     // add a new player to the tournament
-    mutating func addPlayer(_ player: Player) {
+    func addPlayer(_ player: Player) {
         players.append(player)
     }
 }
+

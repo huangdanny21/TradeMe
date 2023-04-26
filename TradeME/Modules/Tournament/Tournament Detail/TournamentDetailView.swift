@@ -111,7 +111,7 @@ struct TournamentDetailScreen: View {
                 let storageRef = storage.reference()
                 let imagesRef = storageRef.child(imageUrl)
                 
-                imagesRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                imagesRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
                     if let error = error {
                         print("Error downloading image: \(error.localizedDescription)")
                     } else {

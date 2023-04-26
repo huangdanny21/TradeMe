@@ -25,6 +25,13 @@ struct BasicCard: Identifiable, Codable {
     }
 }
 
+extension BasicCard {
+    func toFSCard() -> FSCard {
+        FSCard(name: name, tag: printTag, rarity: rarity, price: priceData.data?.prices.average ?? 0)
+    }
+}
+
+
 struct PriceData: Codable {
     let status: Status
     let data: DataClass?

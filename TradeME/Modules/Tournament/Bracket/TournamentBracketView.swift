@@ -6,19 +6,19 @@
 //
 
 import SwiftUI
+import KRTournamentView
 
-struct TournamentBracketView: View {
-    let tournament: Tournament
+struct TournamentBracketView: UIViewRepresentable {
+    var tournament: Tournament
     
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                ForEach(tournament.rounds) { round in
-                    RoundView(round: round)
-                }
-            }
-            .padding()
-        }
-        .navigationBarTitle(tournament.name)
+    func makeUIView(context: Context) -> KRTournamentView {
+        let tournamentView = KRTournamentView(frame: .zero)
+        tournamentView.setDataSource(self)
+        return tournamentView
+    }
+    
+    func updateUIView(_ uiView: KRTournamentView, context: Context) {
+        uiView.reloadData()
     }
 }
+

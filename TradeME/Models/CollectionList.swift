@@ -8,33 +8,50 @@
 import Foundation
 import FirebaseFirestore
 
-struct CollectionList: Identifiable, Codable {
-    let title: String
-    let descrption: String
-    var cards: [BasicCard]
+struct FSCollectionListContainer: Codable, Identifiable {
     var id: String?
-    var count = 0
-}
-
-extension BasicCard {
-    func toFSCard() -> FSCard {
-        FSCard(name: name, tag: printTag, rarity: rarity, price: priceData.data?.prices.average ?? 0)
-    }
+    var userId: String
+    var collections: [FSCollectionList]
 }
 
 struct FSCollectionList: Codable, Identifiable {
-    var id: String?
-    let title: String
-    let descrpition: String
+    var id = UUID().uuidString
+    var userId: String?
+    var title: String
+    let description: String
     let cards: [FSCard]
+
+    enum CodingKeys: String, CodingKey {
+        case userId
+        case title
+        case description
+        case cards
+    }
+
+    init(id: String? = nil, title: String, description: String, cards: [FSCard]) {
+        self.userId = id
+        self.title = title
+        self.description = description
+        self.cards = cards
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.userId = try container.decodeIfPresent(String.self, forKey: .userId)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        self.description = try container.decodeIfPresent(String.self, forKey: .description) ?? ""
+        self.cards = try container.decodeIfPresent([FSCard].self, forKey: .cards) ?? []
+    }
 }
+
+
 
 extension FSCollectionList {
     func toDict() -> [String: Any] {
         var dict: [String: Any] = [:]
-        dict["startDate"] = FieldValue.serverTimestamp()
+        dict["startDate"] = Date().timeIntervalSince1970
         dict["title"] = title
-        dict["description"] = descrpition
+        dict["description"] = description
         
         var cardsDict: [[String: Any]] = []
         for card in cards {
@@ -43,12 +60,5 @@ extension FSCollectionList {
         dict["cards"] = cardsDict
         
         return dict
-    }
-}
-
-
-extension CollectionList {
-    func toFirestoreOject() -> FSCollectionList {
-        FSCollectionList(title: title, descrpition: descrption, cards: cards.map{$0.toFSCard()})
     }
 }

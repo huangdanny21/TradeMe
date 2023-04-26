@@ -73,6 +73,15 @@
       }
     },
     {
+      "identity" : "krtournamentview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krimpedance/KRTournamentView",
+      "state" : {
+        "revision" : "fa5f32356b1d84eeb1b612b7f07699aa0905741e",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

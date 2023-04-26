@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct TournamentSignUpView: View {
-    let tournament: Tournament
+    var tournament: Tournament
     @State private var name = ""
     @State private var email = ""
     @State private var phoneNumber = ""
@@ -34,7 +34,7 @@ struct TournamentSignUpView: View {
                         let player = Player(name: name, email: email, phoneNumber: phoneNumber)
                         
                         // Add new player to tournament
-                        var updatedTournament = tournament
+                        let updatedTournament = tournament
                         updatedTournament.addPlayer(player)
                         
                         // Save changes to tournament object in Firestore
@@ -54,4 +54,5 @@ struct TournamentSignUpView: View {
         // TODO: Validate form data (e.g. check that email and phone number are valid)
         return !name.isEmpty
     }
+
 }

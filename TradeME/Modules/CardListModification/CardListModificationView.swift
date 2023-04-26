@@ -30,6 +30,9 @@ struct CardListModificationView: View {
     @State var showingPopup = false
     
     @State var cardList: [CardContainer]
+    @State private var editMode = EditMode.inactive
+    @Environment(\.presentationMode) var presentationMode
+
     
     var total: Double {
         var total: Double = 0
@@ -41,25 +44,69 @@ struct CardListModificationView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Button("Add card") {
-                    showingPopup = true
-                }
-                
-                List {
-                    ForEach(cardList, id: \.card.id) { list in
-                        CardModificationView(card: list)
+            Form {
+                Section(header: Text("List Title")) {
+                    if editMode == .active {
+                        TextField("Enter title", text: $list.title)
+                    } else {
+                        Text(list.title)
+                            .onTapGesture {
+                                editMode = .active
+                            }
                     }
                 }
-                Text("Total: \(total.formatted(.currency(code: "USD")))")
+                
+                Section(header: Text("Cards")) {
+                    List {
+                        ForEach(cardList) { cardContainer in
+                            CardModificationView(card: cardContainer)
+                        }
+                        .onDelete(perform: deleteCard)
+                    }
+                    .listStyle(InsetGroupedListStyle())
+                }
+                
+                Section {
+                    HStack {
+                        Spacer()
+                        Text("Total: \(total.formatted(.currency(code: "USD")))").font(.headline)
+                        Spacer()
+                    }
+                }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button("Save") {
-                    save()
+                if editMode == .active {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            editMode = .inactive
+                            save()
+                        }) {
+                            Text("Done")
+                        }
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if editMode == .inactive {
+                        Button(action: {
+                            editMode = .active
+                        }) {
+                            Text("Edit")
+                        }
+                    } else {
+                        EditButton()
+                    }
                 }
             }
         }
-        .hiddenNavigationBarStyle()
+//        .navigationBarItems(leading:
+//            Button(action: {
+//                presentationMode.wrappedValue.dismiss()
+//            }, label: {
+//                Image(systemName: "chevron.backward")
+//            })
+//        )
         .popup(isPresented: $showingPopup) {
             CardSearchView(addCard: addCard(with:))
         } customize: {
@@ -69,7 +116,6 @@ struct CardListModificationView: View {
                 .position(.bottom)
                 .closeOnTap(false)
                 .dragToDismiss(true)
-            
         }
     }
     
@@ -80,13 +126,10 @@ struct CardListModificationView: View {
     }
     
     func save() {
-//        let userDefaults = UserDefaults.standard
-//        do {
-//            var previousCollection = try userDefaults.getObject(forKey: Constants.CardCollection.savedCollection.rawValue, castTo: [CollectionList].self)
-//            previousCollection.append(<#T##newElement: CollectionList##CollectionList#>)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        userDefaults.set(CollectionList.self, forKey: Constants.CardCollection.newCollection.rawValue)
+        // Save changes to the list and cardList
+    }
+    
+    func deleteCard(at offsets: IndexSet) {
+        cardList.remove(atOffsets: offsets)
     }
 }

@@ -15,11 +15,12 @@ struct TournamentListView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.tournaments) { tournament in
+            List(viewModel.tournaments, id: \.name) { tournament in
                 NavigationLink(destination: TournamentDetailScreen(tournament: tournament)) {
                     Text(tournament.name)
                 }
             }
+
             .navigationBarTitle("Tournaments")
             .navigationBarItems(trailing: Button(action: {
                 isPresentingTournamentCreation = true

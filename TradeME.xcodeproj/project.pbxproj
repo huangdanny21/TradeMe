@@ -18,6 +18,7 @@
 		B51362A029F8815300831874 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513629F29F8815300831874 /* SessionStore.swift */; };
 		B51362A229F8819100831874 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51362A129F8819100831874 /* RoundedButtonStyle.swift */; };
 		B51362A529F88A1100831874 /* ProfileContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51362A429F88A1100831874 /* ProfileContainerView.swift */; };
+		B51858E129F9DCB300322C58 /* KRTournamentView in Frameworks */ = {isa = PBXBuildFile; productRef = B51858E029F9DCB300322C58 /* KRTournamentView */; };
 		B526083629F4FAF700390B19 /* CardModificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B526083529F4FAF700390B19 /* CardModificationView.swift */; };
 		B537CB6E29EF32D3008E70CC /* TradeMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6D29EF32D3008E70CC /* TradeMEApp.swift */; };
 		B537CB7029EF32D3008E70CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B537CB6F29EF32D3008E70CC /* ContentView.swift */; };
@@ -215,6 +216,7 @@
 				B5B71C9129F0FE5400D6BFB8 /* FirebaseDatabase in Frameworks */,
 				B5B71CAB29F0FE5400D6BFB8 /* FirebasePerformance in Frameworks */,
 				B5B71C8729F0FE5400D6BFB8 /* FirebaseAppCheck in Frameworks */,
+				B51858E129F9DCB300322C58 /* KRTournamentView in Frameworks */,
 				B5B71C8129F0FE5400D6BFB8 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				B5B71CA329F0FE5400D6BFB8 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				B5B71CAF29F0FE5400D6BFB8 /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -629,6 +631,7 @@
 				B5B71CAE29F0FE5400D6BFB8 /* FirebaseRemoteConfigSwift */,
 				B5B71CB029F0FE5400D6BFB8 /* FirebaseStorage */,
 				B5B71CB229F0FE5400D6BFB8 /* FirebaseStorageCombine-Community */,
+				B51858E029F9DCB300322C58 /* KRTournamentView */,
 			);
 			productName = TradeME;
 			productReference = B537CB6A29EF32D3008E70CC /* TradeME.app */;
@@ -706,6 +709,7 @@
 				B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				B5B71C6E29F0B53800D6BFB8 /* XCRemoteSwiftPackageReference "PopupView" */,
 				B5B71C7D29F0FE5400D6BFB8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B51858DF29F9DCB300322C58 /* XCRemoteSwiftPackageReference "KRTournamentView" */,
 			);
 			productRefGroup = B537CB6B29EF32D3008E70CC /* Products */;
 			projectDirPath = "";
@@ -1135,6 +1139,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B51858DF29F9DCB300322C58 /* XCRemoteSwiftPackageReference "KRTournamentView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krimpedance/KRTournamentView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
@@ -1162,6 +1174,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B51858E029F9DCB300322C58 /* KRTournamentView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B51858DF29F9DCB300322C58 /* XCRemoteSwiftPackageReference "KRTournamentView" */;
+			productName = KRTournamentView;
+		};
 		B5B71C6C29F0B50600D6BFB8 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B5B71C6B29F0B50600D6BFB8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

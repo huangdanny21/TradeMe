@@ -55,7 +55,7 @@ class TournamentCreationViewModel: ObservableObject {
         
         // submit the tournament to firestore
         isSubmitting = true
-        db.collection("tournaments").addDocument(data: tournament.toDict()) { error in
+        db.collection("tournaments").document("\(Auth.auth().currentUser?.uid ?? "")").setData(tournament.toDict()) { error in
             if let error = error {
                 print("Error adding tournament: \(error.localizedDescription)")
                 self.isSubmitting = false
