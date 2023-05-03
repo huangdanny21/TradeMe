@@ -12,15 +12,34 @@ import PopupView
 struct TournamentListView: View {
     @StateObject private var viewModel = TournamentListViewModel()
     @State private var isPresentingTournamentCreation = false
-    
+
     var body: some View {
         NavigationView {
-            List(viewModel.tournaments, id: \.name) { tournament in
-                NavigationLink(destination: TournamentDetailScreen(tournament: tournament)) {
-                    Text(tournament.name)
+            List {
+                Section(header: Text("Not Started")) {
+                    ForEach(viewModel.tournamentsNotStarted, id: \.name) { tournament in
+                        NavigationLink(destination: TournamentDetailScreen(tournament: tournament)) {
+                            Text(tournament.name)
+                        }
+                    }
+                }
+
+                Section(header: Text("In Progress")) {
+                    ForEach(viewModel.tournamentsInProgress, id: \.name) { tournament in
+                        NavigationLink(destination: TournamentDetailScreen(tournament: tournament)) {
+                            Text(tournament.name)
+                        }
+                    }
+                }
+
+                Section(header: Text("Ended")) {
+                    ForEach(viewModel.tournamentsEnded, id: \.name) { tournament in
+                        NavigationLink(destination: TournamentDetailScreen(tournament: tournament)) {
+                            Text(tournament.name)
+                        }
+                    }
                 }
             }
-
             .navigationBarTitle("Tournaments")
             .navigationBarItems(trailing: Button(action: {
                 isPresentingTournamentCreation = true
@@ -44,6 +63,7 @@ struct TournamentListView: View {
         }
     }
 }
+
 
 struct TournamentListScreen_Previews: PreviewProvider {
     static var previews: some View {

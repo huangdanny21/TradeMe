@@ -8,13 +8,22 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Round: Codable, Identifiable {
+struct Round: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var number: Int
     var date: Date
     var matches: [Match]
     var players: [Player] // UserId
     var inProgress: Bool
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(number)
+        hasher.combine(date)
+        hasher.combine(matches)
+        hasher.combine(players)
+        hasher.combine(inProgress)
+    }
     
     // convert the round object to a dictionary
     func toDict() -> [String: Any] {
@@ -32,3 +41,4 @@ struct Round: Codable, Identifiable {
                 "inProgress": inProgress]
     }
 }
+

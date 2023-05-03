@@ -99,7 +99,6 @@
 		B5B71CB329F0FE5400D6BFB8 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B5B71CB229F0FE5400D6BFB8 /* FirebaseStorageCombine-Community */; };
 		B5F7611229F7636100AAF264 /* FSCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7611129F7636100AAF264 /* FSCard.swift */; };
 		B5F7611629F7708200AAF264 /* TournamentBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7611529F7708200AAF264 /* TournamentBracketView.swift */; };
-		B5F7611829F7719900AAF264 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7611729F7719900AAF264 /* RoundView.swift */; };
 		B5F7611B29F7760300AAF264 /* TournamentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7611A29F7760300AAF264 /* TournamentSignUpView.swift */; };
 		B5F7611D29F77B9200AAF264 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F7611C29F77B9200AAF264 /* Player.swift */; };
 /* End PBXBuildFile section */
@@ -187,7 +186,6 @@
 		B5B71C7929F0EFEE00D6BFB8 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		B5F7611129F7636100AAF264 /* FSCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCard.swift; sourceTree = "<group>"; };
 		B5F7611529F7708200AAF264 /* TournamentBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentBracketView.swift; sourceTree = "<group>"; };
-		B5F7611729F7719900AAF264 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		B5F7611A29F7760300AAF264 /* TournamentSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentSignUpView.swift; sourceTree = "<group>"; };
 		B5F7611C29F77B9200AAF264 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +270,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		B51858E229F9E4DD00322C58 /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tournament;
+			sourceTree = "<group>";
+		};
 		B537CB6129EF32D3008E70CC = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +345,7 @@
 		B537CB9A29EF595E008E70CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B51858E229F9E4DD00322C58 /* Tournament */,
 				B513629429F872F400831874 /* Message */,
 				B5F7611329F765E300AAF264 /* Card */,
 				B537CBB929EFBC44008E70CC /* CollectionList.swift */,
@@ -491,7 +497,6 @@
 			isa = PBXGroup;
 			children = (
 				B5F7611529F7708200AAF264 /* TournamentBracketView.swift */,
-				B5F7611729F7719900AAF264 /* RoundView.swift */,
 			);
 			path = Bracket;
 			sourceTree = "<group>";
@@ -766,7 +771,6 @@
 				B5B71C7329F0E99C00D6BFB8 /* PropertyListSavable.swift in Sources */,
 				B578E33829F781700056481E /* TournamentGenerator.swift in Sources */,
 				B5812A4F29F6367800C863B0 /* TournamentListView.swift in Sources */,
-				B5F7611829F7719900AAF264 /* RoundView.swift in Sources */,
 				B513629C29F8767500831874 /* UserSearchView.swift in Sources */,
 				B51362A029F8815300831874 /* SessionStore.swift in Sources */,
 				B5B71C7A29F0EFEE00D6BFB8 /* UserDefaults+Extension.swift in Sources */,

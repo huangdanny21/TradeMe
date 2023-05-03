@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Match: Codable, Identifiable {
+struct Match: Codable, Identifiable, Hashable {
     var id: String?
     var player1: Player
     var player2: Player
@@ -22,5 +22,14 @@ struct Match: Codable, Identifiable {
          "winner": winner?.toDict() ?? [:],
          "roundNumber": roundNumber
         ]
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(player1)
+        hasher.combine(player2)
+        hasher.combine(result)
+        hasher.combine(winner)
+        hasher.combine(roundNumber)
     }
 }

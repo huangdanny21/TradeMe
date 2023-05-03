@@ -16,6 +16,18 @@ class TournamentListViewModel: ObservableObject {
     private var tournamentsListener: ListenerRegistration?
     private let db = Firestore.firestore()
     
+    var tournamentsNotStarted: [Tournament] {
+        tournaments.filter { !$0.started && !$0.ended }
+    }
+    
+    var tournamentsInProgress: [Tournament] {
+        tournaments.filter { $0.started && !$0.ended }
+    }
+    
+    var tournamentsEnded: [Tournament] {
+        tournaments.filter { $0.ended }
+    }
+    
     init() {
         fetchTournaments()
     }

@@ -7,7 +7,7 @@
 
 import FirebaseFirestoreSwift
 
-struct Player: Codable, Identifiable {
+struct Player: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var name: String
     var email: String
@@ -18,5 +18,13 @@ struct Player: Codable, Identifiable {
         ["name": name,
         "email": email,
         "phoneNumber": phoneNumber]
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        lhs.id == rhs.id
     }
 }
